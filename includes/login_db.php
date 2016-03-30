@@ -39,7 +39,7 @@
 
 				//users is the table name
 				$query = "select * from $table_name
-							where rollno = ".$rollno;
+							where rollno = '".$rollno."'";
 				$result = $this->db->query($query);
 				if($result) {
 					$num_results = $result->num_rows;

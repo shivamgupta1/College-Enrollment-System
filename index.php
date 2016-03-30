@@ -7,17 +7,11 @@
 		header("Location: http://localhost/login.php?msg=login");
 		exit;
 	}
-	else {
-		$row = $obj->give_row();
-	}
+	$row = $obj->give_row();
+	$title = 'Home';
+	require('includes/header.php');
 ?>
 
-<html>
-<head>
-	<title>Home</title>
-</head>
-
-<body>
 	<h1>Member's area</h1>
 	<p><b>User's info</b></p>
 	<table>
