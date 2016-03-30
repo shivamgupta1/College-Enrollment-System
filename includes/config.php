@@ -1,0 +1,9 @@
+<?php 
+	define('LOGIN_DB_HOST','localhost');
+	define('LOGIN_DB_USER','test_user');
+	define('LOGIN_DB_PASS','dbms');
+	define('LOGIN_DB_NAME','test');
+	define('SITE_KEY','gbBNPaKbKVpW79o10DxZyPjBFextmjuMuIMbq9om5VT0vXcbBNvVmkaYU0gyEnggxr9FMC8oasO1jvVtyfSsXa6wOV4IpT7ADPlt');
+	define('NONCE_SALT','85LSf2vORrqkL0cjNrzzr5JRWwC5p2REZiOplKkfTp5JSPSCRXCgLr6qiTArZrzZHAXAKvY7CXVQ4qLe12CbfEiFmWUZL7Nt4seM');
+	define('COOKIE_SALT','Kz3TZwPRIkUr9yoAsZS9nvTojAUEpPJSmHNyQnl5yCv2J1U3zQAVVzxRIjeVwyX56lOPBUNf5XTDHRQ2siOoGU4Eb34notRTgrJ8');
+?>
