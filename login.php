@@ -18,7 +18,7 @@
 			<p>Invalid username or password</p>
 		<?php endif;?>
 		<?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
-			<?php if($logged==true) : ?>
+			<?php if($loggedout==true) : ?>
 				<p>You have been successfully logged out.</p>
 			<?php else : ?>
 				<p>There was a problem logging you out.</p>

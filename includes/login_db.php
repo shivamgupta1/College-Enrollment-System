@@ -187,5 +187,6 @@
 		}
 	}
 
+	//Instantiating the class
 	$obj = new login_class;
 ?>
