@@ -21,7 +21,7 @@
 	</tr>
 	<tr>
 		<td>Name: </td>
-		<td><?= $row['name']?></td>
+		<td><?= $row['fname']?></td>
 	</tr>
 	</table>
 	<p>This is members only area, only for logged in users. To logout, <a href="login.php?action=logout">click here</a></p>
