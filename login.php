@@ -6,45 +6,80 @@
 	}
 	$logged = $obj->login('index.php'); 
 ?>
+<html lang="en">
 
-<html>
 <head>
-<title>Login Form</title>
+	<meta charset="utf-8">
+	<title>Home</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
 <body>
-	<div style="width: 960px; background: #fff; border: 1px solid #e4e4e4; padding: 20px; margin: 10px auto;">
-		<?php if($logged=='invalid') : ?>
-			<p>Invalid username or password</p>
-		<?php endif;?>
-		<?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
-			<?php if($loggedout==true) : ?>
-				<p>You have been successfully logged out.</p>
-			<?php else : ?>
-				<p>There was a problem logging you out.</p>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Log In</h2>
+			</div>
+			<?php if($logged=='invalid') : ?>
+				<p>Invalid username or password</p>
 			<?php endif;?>
-		<?php endif;?>
-		<?php if(isset($_GET['msg']) && $_GET['msg']=='login') : ?>
-			<p>You must log in to view this content. Please log in below.</p>
-		<?php endif;?>
-		<h1>Login</h1>
-		<form action="" method="post">
-		<table>
-		<tr>
-			<td>Username: </td>
-			<td><input type="text" name="rollno" /></td>
-		</tr>
-		<tr>
-			<td>Password: </td>
-			<td><input type="password" name="password" /></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><input type="submit" value="Login"/></td>
-		</tr>
-		</table>
-		</form>
+			<?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
+				<?php if($loggedout==true) : ?>
+					<p>You have been successfully logged out.</p>
+				<?php else : ?>
+					<p>There was a problem logging you out.</p>
+				<?php endif;?>
+			<?php endif;?>
+			<?php if(isset($_GET['msg']) && $_GET['msg']=='login') : ?>
+				<p>You must log in to view this content. Please log in below.</p>
+			<?php endif;?>
+			<form action="" method="post">
+			
+			<label for="rollno">Username</label>
+			<br/>
+			<input type="text" id="rollno" name="rollno">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password" name="password">
+			<br/>
+			<input type="submit" value="Login">
+			<br/>
+			</form>
+			
+		</div>
 		<p>Not a member? <a href="register.php">Register here</a></p>
 	</div>
 </body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+
 </html>
