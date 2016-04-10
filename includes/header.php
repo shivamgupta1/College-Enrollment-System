@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?= $title; ?></title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/header.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 <body>
 	<div class="header">
