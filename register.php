@@ -15,7 +15,7 @@
 
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_register.css">
 
 	<script src="../ajax/jquery.min.js"></script>
 </head>
@@ -120,7 +120,11 @@
 
 			<label for="department">Department</label>
 			<br/>
-			<input type="radio" name="department" value="I.T" checked />Information Technology&nbsp&nbsp&nbsp<input type="radio" name="department" value="E.C.E" />Electronics and Communication
+			<select name="department" id="department">
+				<option value="I.T">Information Technology</option>
+				<option value="E.C.E">Electronics and Communication</option>
+			</select>			
+<br/>
 			<br/>
 
 			<label for="course">Course</label>

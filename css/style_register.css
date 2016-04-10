@@ -1,5 +1,5 @@
 body {
-	background: url("../images/photo_bg.jpg") no-repeat center center fixed;
+	background: url("../images/green-blank-blackboard.jpg") no-repeat center center fixed;
 	background-size: cover;
 	font-size: 16px;
 	font-family: 'Lato', sans-serif;
@@ -68,7 +68,7 @@ p.small {
 
 .login-box {
 	background-color: white;
-	max-width: 340px;
+	max-width: 400px;
 	margin: 0 auto;
 	position: relative;
 	top: 80px;
