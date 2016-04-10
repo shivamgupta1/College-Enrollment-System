@@ -8,5 +8,5 @@
 	<div class="header">
 		<span class="lt">COLLEGE ENROLLMENT SYSTEM</span>
 		<span class="rt"><a href="login.php?action=logout">logout</a></span>
-		<span class="rt"><?= $row['name'];?></span>
+		<span class="rt"><?= $row['fname'];?></span>
 	</div>

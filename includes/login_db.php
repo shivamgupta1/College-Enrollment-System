@@ -31,7 +31,19 @@
 				//$values = $_POST;
 
 				$rollno = $values['rollno'];
-				$name = $values['name'];
+				$fname = $values['fname'];
+				$lname = $values['lname'];
+				$sex = $values['sex'];
+				$date_dob = $values['date_dob'];
+				$month_dob = $values['month_dob'];
+				$year_dob = $values['year_dob'];
+				$father = $values['father'];
+				$mother = $values['mother'];
+				$category = $values['category'];
+				$department = $values['department'];
+				$course = $values['course'];
+				$batch = $values['batch'];
+				$semester = $values['semester'];
 				$password = $values['password'];
 				$regdate = $values['date'];
 				
@@ -56,7 +68,10 @@
 				$nonce  = md5('very secure'.$rollno.$regdate.NONCE_SALT );
 				$password = hash_password($password, $nonce);
 				$query = "insert into $table_name
-							values ( '".$name."', '".$rollno."', '".$password."', '".$regdate."')";
+							values ( '".$rollno."', '".$fname."', '".$lname."', '".$sex."', '".
+									$date_dob."', '".$month_dob."', '".$year_dob."', '".$father."', '".
+									$mother."', '".$category."', '".$department."', '".$course."', '".$batch."', '".
+									$semester."', '".$password."', '".$regdate."')";
 				
 				$result = $this->db->query($query);
 	

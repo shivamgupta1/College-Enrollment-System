@@ -30,17 +30,13 @@
 			<td><input type="text" name="fname" value=""/></td>
 		</tr>
 		<tr>
-			<td>Middle Name: </td>
-			<td><input type="text" name="mname" value="" /></td>
-		</tr>
-		<tr>
 			<td>Last Name: </td>
 			<td><input type="text" name="lname" value="" /></td>
 		</tr>
 		<tr>
 			<td>Sex: </td>
 			<td>
-				<input type="radio" name="gender" value="male" checked />Male&nbsp<input type="radio" name="gender" value="female" />Female
+				<input type="radio" name="sex" value="Male" checked />Male&nbsp<input type="radio" name="sex" value="Female" />Female
 			</td>
 		</tr>
 		<tr>
@@ -85,7 +81,7 @@
 		</tr>
 		<tr>
 			<td>Category: </td>
-			<td><select>
+			<td><select name="category">
 				<option value="General">General</option>
 				<option value="SC">SC</option>
 				<option value="ST">ST</option>
@@ -109,7 +105,7 @@
 		</tr>
 		<tr>
 			<td>Batch: </td>
-			<td><select name="year">
+			<td><select name="batch">
 				<?php
 					for($i=2016; $i>=2000; $i--) {
 						echo "<option value=\"$i\" > $i </option>";
@@ -119,7 +115,7 @@
 		</tr>
 		<tr>
 			<td>Semester: </td>
-			<td><select><?php 
+			<td><select name="semester"><?php 
 				for($i=1; $i<=8; $i++) {
 					echo "<option value=\"$i\" > $i </option>";
 				}
