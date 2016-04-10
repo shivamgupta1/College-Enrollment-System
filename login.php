@@ -20,12 +20,15 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	
 </head>
 
 <body>
 	<div class="container">
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1>
+			
+			<h1 id="title" class="hidden">College Enrollment System</h1>
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
@@ -57,12 +60,17 @@
 			<input type="submit" value="Login">
 			<br/>
 			</form>
+			<p>Not a member? <a href="register.php">Register here</a></p>
 			
 		</div>
-		<p>Not a member? <a href="register.php">Register here</a></p>
+		
+		
 	</div>
-</body>
+	<div id="footer">
+		<h2 style="color: red;"><a href="docs/Abstract.docx">About this project</a></h2>
+	</div>
 
+</body>
 <script>
 	$(document).ready(function () {
     	$('#logo').addClass('animated fadeInDown');
