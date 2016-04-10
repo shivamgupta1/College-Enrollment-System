@@ -39,6 +39,9 @@
 				$year_dob = $values['year_dob'];
 				$father = $values['father'];
 				$mother = $values['mother'];
+				$address_1 = $values['address_1'];
+				$address_2 = $values['address_2'];
+				$address_3 = $values['address_3'];
 				$category = $values['category'];
 				$department = $values['department'];
 				$course = $values['course'];
@@ -70,7 +73,8 @@
 				$query = "insert into $table_name
 							values ( '".$rollno."', '".$fname."', '".$lname."', '".$sex."', '".
 									$date_dob."', '".$month_dob."', '".$year_dob."', '".$father."', '".
-									$mother."', '".$category."', '".$department."', '".$course."', '".$batch."', '".
+									$mother."', '".$address_1."', '".$address_2."', '".$address_3."', '".$category."', '".
+									$department."', '".$course."', '".$batch."', '".
 									$semester."', '".$password."', '".$regdate."')";
 				
 				$result = $this->db->query($query);

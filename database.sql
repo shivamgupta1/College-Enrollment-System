@@ -13,6 +13,11 @@ create table users (
 		father varchar(60),
 		mother varchar(60),
 
+
+		address_1 varchar(60),
+		address_2 varchar(60),
+		address_3 varchar(60),
+		
 		category varchar(10),
 
 		department varchar(60),

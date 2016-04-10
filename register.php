@@ -89,6 +89,18 @@
 			</select></td>
 		</tr>
 		<tr>
+			<td>Address: </td>
+			<td><input type="text" name="address_1" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="text" name="address_2" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="text" name="address_3" /></td>
+		</tr>
+		<tr>
 			<td>Department: </td>
 			<td>
 				<input type="radio" name="department" value="I.T" checked />Information Technology&nbsp&nbsp&nbsp<input type="radio" name="department" value="E.C.E" />Electronics and Communication
