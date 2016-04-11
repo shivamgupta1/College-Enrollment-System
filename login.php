@@ -33,7 +33,7 @@
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <style>
     	body {
-    		background: url("../images/photo_bg.jpg") no-repeat center center fixed;
+    		background: url("images/photo_bg.jpg") no-repeat center center fixed;
 			background-size: cover;
     	}
     </style>
