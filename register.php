@@ -73,7 +73,7 @@
                     	<h3 class="panel-title">Registration</h3>
                 	</div>
 					<div class="panel-body">
-						<form role="form" class="form-horizontal" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+						<form role="form" class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 							<fieldset>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Roll Number (Username): </label>

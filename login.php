@@ -71,8 +71,18 @@
 							<?php if($logged=='invalid') : ?>
 								<p class="text-danger">Invalid username or password</p>
 							<?php endif;?>
-					
-							<form role="form" action="" method="post">
+					        <?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
+                                <?php if($loggedout==true) : ?>
+                                    <p class="text-success">You have been successfully logged out.</p>
+                                <?php else : ?>
+                                    <p class="text-danger">There was a problem logging you out.</p>
+                                <?php endif;?>
+                            <?php endif;?>
+                            <?php if(isset($_GET['msg']) && $_GET['msg']=='login') : ?>
+                                <p class="text-primary">You must log in to view this content. Please log in below.</p>
+                            <?php endif;?>
+
+							<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 						        <fieldset>
 						        <h4>Username</h4>
                                 <div class="form-group">

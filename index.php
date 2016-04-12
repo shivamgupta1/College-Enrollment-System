@@ -1,12 +1,8 @@
 <?php 
 	require('includes/config.php');
 	require('includes/login_db.php');
-	$logged = $obj->check_login();
-
-	if($logged == false) {
-		header("Location: http://localhost/login.php?msg=login");
-		exit;
-	}
+	$obj->check_login();
+	
 	$row = $obj->give_row();
 	$title = 'Home';
 	require('includes/header.php');

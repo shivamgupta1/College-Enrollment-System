@@ -80,9 +80,10 @@
 				$result = $this->db->query($query);
 	
 				if($result) {
-					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-					$redirect = str_replace('register.php', $redirect, $url);
-					header("Location: $redirect?reg=true");
+					//$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+					//$redirect = str_replace('register.php', $redirect, $url);
+					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME']."/".$redirect;
+					header("Location: $url");
 					exit;
 				}
 				else {
@@ -127,9 +128,9 @@
 					setcookie('College_enrol_sys[rollno]', $rollno, 0, '', '', '', true);
 					setcookie('College_enrol_sys[password]', $cookie_password, 0, '', '', '', true);
 
-					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-					$redirect = str_replace('login.php', $redirect, $url);
-					header("Location: $redirect");
+					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME']."/".$redirect;
+					//$redirect = str_replace('login.php', $redirect, $url);
+					header("Location: $url");
 					exit;
 				}
 				else {
@@ -151,6 +152,12 @@
 			else {
 				return false;
 			}
+		}
+
+		function redirect_login() {
+			$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME']."/login.php?msg=login";
+			header("Location: $url");
+			exit;
 		}
 
 		function check_login() {
@@ -179,15 +186,14 @@
 				$cookie_nonce = md5('cookie'.$row['rollno'].$row['regdate'].COOKIE_SALT);
 				$check_password = hash_password($row['password'], $cookie_nonce);
 				if($password == $check_password) {
-					return true;
+					return;
 				}
 				else {
-					return false;
+					$this->redirect_login();
 				}
 			}
 			else {
-				header("Location: http://localhost/login.php?msg=login");
-				exit;
+				$this->redirect_login();
 			}
 		}
 
