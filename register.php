@@ -2,195 +2,250 @@
 	require('includes/config.php');
 	require('includes/login_db.php');
 	$obj->register('login.php');
-	
 ?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Register</title>
 
-	<!-- Google Fonts -->
-	<link href='../css/google_roboto_slab.css' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="css/style_register.css">
+    <title>Registration Portal</title>
 
-	<script src="../ajax/jquery.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+    	body {
+    		background: url("images/photo_bg.jpg") no-repeat center center fixed;
+			background-size: cover;
+    	}
+    	td {
+    		padding:13px 30px 13px 30px;
+    	}
+    	.adr {
+    		padding:0px 30px 0px 30px;
+    	}
+
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
-	<div class="container">
-		<div class="top">
-			
-			<h1 id="title" class="hidden">Registration Form</h1>
-		</div>
-		<div class="login-box animated fadeInUp">
-			<div class="box-header">
-				<h2>Registration</h2>
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" >College Enrollment System</a>
+        </div>
+        <a href="http://iiita.ac.in"><img src="images/logo.png" class="nav navbar-top-links navbar-right" width="350px" height="49px"></a>
+    </nav>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-7 col-md-offset-2">
+            	<div class="login-panel panel panel-default">
+                	<div class="panel-heading">
+                    	<h3 class="panel-title">Registration</h3>
+                	</div>
+					<div class="panel-body">
+						<form role="form" class="form-horizontal" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Roll Number (Username): </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="eg. iit2014001" type="text" name="rollno" autofocus/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Password: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Password" type="password" name="password" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Confirm Password: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Retype Password" type="password" name="cpassword" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">First Name: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="eg. John" type="text" name="fname" value=""/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Last Name: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="eg. Miller" type="text" name="lname" value="" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Sex: </label>
+									<div class="col-sm-8">
+									    <label class="radio-inline">
+                                            <input type="radio" name="sex" value="Male" checked>Male
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="sex" value="Female">Female
+                                        </label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Date of birth: </label>
+									<div class="col-sm-8">
+										<div class="col-xs-3">
+											<select class="form-control" name="date_dob">
+												<option value="null">DD</option>
+												<?php
+													for($i=1; $i<=31; $i++) {
+														printf("<option value=\"%02u\"> %02u </option>",$i, $i);
+													}
+												?>
+											}
+											</select>
+										</div>
+										<div class="col-xs-3">
+											<select class="form-control" name="month_dob">
+												<option value="null">MM</option>
+												<?php
+													for($i=1; $i<=12; $i++) {
+														printf("<option value=\"%02u\"> %02u </option>",$i, $i);
+													}
+												?>
+											</select>
+										</div>
+										<div class="col-xs-4">
+											<select class="form-control" name="year_dob">
+												<option value="null">YYYY</option>
+												<?php
+													for($i=2006; $i>=1985; $i--) {
+														echo "<option value=\"$i\" > $i </option>";
+													}
+												?>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Father's Name: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Father's name" type="text" name="father"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Mother's Name: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Mother's name" type="text" name="mother"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Category: </label>
+									<div class="col-sm-4">
+										<select class="form-control"name="category">
+											<option value="General">General</option>
+											<option value="SC">SC</option>
+											<option value="ST">ST</option>
+											<option value="OBC-NCL">OBC-NCL</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Address: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="House no." type="text" name="address_1" />
+										<input class="form-control" placeholder="City" type="text" name="address_2" />
+										<input class="form-control" placeholder="Zip code" type="text" name="address_3" />
+									</div>
+								</div>
+								<div class="form-group">	
+									<label class="col-sm-4 control-label">Department: </label>
+									<div class="col-sm-8">
+                                        <div class="radio">
+                                            <label>
+                                          	  <input type="radio" name="department" value="I.T" checked>Information Technology
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="department" value="E.C.E">Electronics and Communication
+                                            </label>
+                                        </div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Course: </label>
+									<div class="col-sm-3">
+										<select class="form-control" name="course">
+											<option value="B.Tech">B.Tech</option>
+											<option value="M.tech">M.Tech</option>
+											<option value="B.Tech-M.Tech Dual">B.Tech-M.Tech Dual</option>
+											<option value="P.h.d">P.h.d</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Batch: </label>
+									<div class="col-sm-3">
+										<select class="form-control" name="batch">
+											<?php
+												for($i=2016; $i>=2000; $i--) {
+													echo "<option value=\"$i\" > $i </option>";
+												}
+											?>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Semester: </label>
+									<div class="col-sm-3">
+										<select class="form-control" name="semester"><?php 
+											for($i=1; $i<=8; $i++) {
+												echo "<option value=\"$i\" > $i </option>";
+											}
+										?>
+										</select>
+									</div>
+								</div>
+								<input type="hidden" name="date" value="<?php echo time(); ?>" />
+								<div class="form-group"></div>
+								<div class="form-group">
+									<div class="col-sm-offset-3 col-sm-7">
+										<input type="submit" value="Register" class="btn btn-lg btn-success btn-block"/>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+						<label>Already registered? <a href="login.php">Log in here</a></label>
+					</div>
+				</div>
 			</div>
-			
-			<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-			
-			<label for="rollno">Roll Number (Username)</label>
-			<br/>
-			<input type="text" id="rollno" name="rollno">
-			<br/>
-			<label for="password">Password</label>
-			<br/>
-			<input type="password" id="password" name="password">
-			<br/>
-			<label for="cpassword">Confirm Password</label>
-			<br/>
-			<input type="password" id="cpassword" name="cpassword">
-			<br/>
-			<label for="fname">First Name</label>
-			<br/>
-			<input type="text" id="fname" name="fname">
-			<br/>
-			<label for="lname">Last Name</label>
-			<br/>
-			<input type="text" id="lname" name="lname">
-			<br/>
-			<label for="sex">Gender</label>
-			<br/>
-			<input type="radio" name="sex" id="sex" value="Male" checked>Male&nbsp<input type="radio" name="sex" value="Female">Female
-			<br/>
-			<label for="date_dob">Date of Birth</label>
-			<br/>
-			<select name="date_dob">
-					<option value="null">DD</option>
-					<?php
-						for($i=1; $i<=31; $i++) {
-							printf("<option value=\"%02u\"> %02u </option>",$i, $i);
-						}
-					?>
-				}
-			</select>
-				&nbsp
-			<select name="month_dob">
-					<option value="null">MM</option>
-					<?php
-						for($i=1; $i<=12; $i++) {
-							printf("<option value=\"%02u\"> %02u </option>",$i, $i);
-						}
-					?>
-			</select>
-				&nbsp
-			<select name="year_dob">
-					<option value="null">YYYY</option>
-					<?php
-						for($i=2006; $i>=1985; $i--) {
-							echo "<option value=\"$i\" > $i </option>";
-						}
-					?>
-			</select>
-			<br/>
-			<br/>
-
-			<label for="father">Father's Name</label>
-			<br/>
-			<input type="text" name="father" id="father"/>
-			<br/>
-
-			<label for="mother">Mother's Name</label>
-			<br/>
-			<input type="text" name="mother" id="mother"/>
-			<br/>
-			<label for="category">Category</label>
-			<br/>
-			<select name="category" id="category">
-				<option value="General">General</option>
-				<option value="SC">SC</option>
-				<option value="ST">ST</option>
-				<option value="OBC-NCL">OBC-NCL</option>
-			</select>
-			<br/>
-			<br/>
-			
-			<label for="address">Address</label>
-			<br/>
-			<input type="text" id="address" name="address_1">
-			<br/>
-			<input type="text" id="address" name="address_2">
-			<br/>
-			<input type="text" id="address" name="address_3">
-			<br/>
-
-			<label for="department">Department</label>
-			<br/>
-			<select name="department" id="department">
-				<option value="I.T">Information Technology</option>
-				<option value="E.C.E">Electronics and Communication</option>
-			</select>			
-<br/>
-			<br/>
-
-			<label for="course">Course</label>
-			<br/>
-			<select name="course" id="course">
-				<option value="B.Tech">B.Tech</option>
-				<option value="M.tech">M.Tech</option>
-				<option value="B.Tech-M.Tech Dual">B.Tech-M.Tech Dual</option>
-				<option value="P.h.d">P.h.d</option>
-			</select>
-			<br/>
-			<br/>
-			
-			<label for="batch">Batch</label>
-			</br>
-			<select name="batch" id="batch">
-				<?php
-					for($i=2016; $i>=2000; $i--) {
-						echo "<option value=\"$i\" > $i </option>";
-					}
-				?>
-			</select>
-			</br>
-<br/>
-			<label for="semester">Semester</label>
-			<br/>
-			<select name="semester" id="semester"><?php 
-				for($i=1; $i<=8; $i++) {
-					echo "<option value=\"$i\" > $i </option>";
-				}
-?></select>
-			<br/>
-<br/>
-			<input type="hidden" name="date" value="<?php echo time(); ?>" />
-					
-			<input type="submit" value="Register">
-			<br/>
-			</form>
-			<p>Already a member? <a href="login.php">Login here</a></p>
-			
 		</div>
-		
-		
 	</div>
-	<div id="footer">
-		<h2 style="color: red;"><a href="docs/Abstract.docx">About this project</a></h2>
-	</div>
-
 </body>
-<script>
-	$(document).ready(function () {
-    	$('#logo').addClass('animated fadeInDown');
-    	$("input:text:visible:first").focus();
-	});
-	$('#username').focus(function() {
-		$('label[for="username"]').addClass('selected');
-	});
-	$('#username').blur(function() {
-		$('label[for="username"]').removeClass('selected');
-	});
-	$('#password').focus(function() {
-		$('label[for="password"]').addClass('selected');
-	});
-	$('#password').blur(function() {
-		$('label[for="password"]').removeClass('selected');
-	});
-</script>
-
 </html>
