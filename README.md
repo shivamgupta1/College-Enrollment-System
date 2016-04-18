@@ -1,4 +1,4 @@
-# College-Enrollment-System
+# College-Enrollment-System (DBMS project)
 
 1) Active development on branch Master.
 
