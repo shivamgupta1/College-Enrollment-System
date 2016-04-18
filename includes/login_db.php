@@ -82,8 +82,9 @@
 				if($result) {
 					//$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 					//$redirect = str_replace('register.php', $redirect, $url);
-					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME']."/".$redirect;
-					header("Location: $url");
+					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+					$redirect = str_replace('register.php', $redirect, $url);
+					header("Location: $redirect?register=success");
 					exit;
 				}
 				else {
@@ -128,9 +129,9 @@
 					setcookie('College_enrol_sys[rollno]', $rollno, 0, '', '', '', true);
 					setcookie('College_enrol_sys[password]', $cookie_password, 0, '', '', '', true);
 
-					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME']."/".$redirect;
-					//$redirect = str_replace('login.php', $redirect, $url);
-					header("Location: $url");
+					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+					$redirect = str_replace('login.php', $redirect, $url);
+					header("Location: $redirect");
 					exit;
 				}
 				else {
@@ -154,13 +155,14 @@
 			}
 		}
 
-		function redirect_login() {
-			$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME']."/login.php?msg=login";
-			header("Location: $url");
+		function redirect_login($current) {
+			$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+			$redirect = str_replace($current, 'login.php', $url);
+			header("Location: $redirect?msg=login");
 			exit;
 		}
 
-		function check_login() {
+		function check_login($current) {
 			$cookie = $_COOKIE['College_enrol_sys'];
 			if(isset($cookie['rollno']) && isset($cookie['password'])) {
 				$table_name = 'users';
@@ -189,11 +191,11 @@
 					return;
 				}
 				else {
-					$this->redirect_login();
+					$this->redirect_login($current);
 				}
 			}
 			else {
-				$this->redirect_login();
+				$this->redirect_login($current);
 			}
 		}
 

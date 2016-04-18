@@ -78,6 +78,9 @@
                                     <p class="text-danger">There was a problem logging you out.</p>
                                 <?php endif;?>
                             <?php endif;?>
+                            <?php if(isset($_GET['register']) && $_GET['register']=='success') : ?>
+                                <p class="text-success">Registration was successful. Please log in below.</p>
+                            <?php endif;?>
                             <?php if(isset($_GET['msg']) && $_GET['msg']=='login') : ?>
                                 <p class="text-primary">You must log in to view this content. Please log in below.</p>
                             <?php endif;?>
