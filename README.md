@@ -4,6 +4,8 @@
 
 2) Branch Stable contains the tested and stable version.
 
-3) Only small changes in each commit.
+# Usage Instructions
 
-4) Comment your code as much as you can.
+1) Only small changes in each commit.
+
+2) Comment your code as much as you can.
