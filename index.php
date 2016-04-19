@@ -1,7 +1,9 @@
 <?php 
 	require('includes/config.php');
 	require('includes/login_db.php');
-	$obj->check_login('index.php');
+	if(!($obj->check_login())) {
+		$obj->redirect_login('index.php');
+	};
 	
 	$row = $obj->give_row();
 	$title = 'Home';

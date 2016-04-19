@@ -1,9 +1,17 @@
 <?php
 	require('../includes/config.php');
 	require('../includes/login_db.php');
+
 	if(isset($_GET['action']) && $_GET['action']=='logout') {
 		$loggedout = $obj->logout();
 	}
+
+    if($obj->check_login()) {
+        $url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+        $redirect = str_replace('pages/login.php', 'index.php', $url);
+        header("Location: $redirect");
+        exit;
+    }
 	$logged = $obj->login('index.php'); 
 ?>
 
