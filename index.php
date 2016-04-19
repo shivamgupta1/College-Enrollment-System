@@ -68,6 +68,6 @@
 		<td><?= $row['semester']?></td>
 	</tr>
 	</table>
-	<p>This is members only area, only for logged in users. To logout, <a href="login.php?action=logout">click here</a></p>
+	<p>This is members only area, only for logged in users. To logout, <a href="pages/login.php?action=logout">click here</a></p>
 </body>
 </html>

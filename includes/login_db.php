@@ -81,9 +81,9 @@
 	
 				if($result) {
 					//$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-					//$redirect = str_replace('register.php', $redirect, $url);
+					//$redirect = str_replace('pages/register.php', $redirect, $url);
 					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
-					$redirect = str_replace('register.php', $redirect, $url);
+					$redirect = str_replace('pages/register.php', $redirect, $url);
 					header("Location: $redirect?register=success");
 					exit;
 				}
@@ -126,11 +126,11 @@
 					$cookie_nonce = md5('cookie'.$rollno.$row['regdate'].COOKIE_SALT);
 					$cookie_password = hash_password($check_pass, $cookie_nonce);
 
-					setcookie('College_enrol_sys[rollno]', $rollno, 0, '', '', '', true);
-					setcookie('College_enrol_sys[password]', $cookie_password, 0, '', '', '', true);
+					setcookie('College_enrol_sys[rollno]', $rollno, 0, '/', '', '', true);
+					setcookie('College_enrol_sys[password]', $cookie_password, 0, '/', '', '', true);
 
 					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
-					$redirect = str_replace('login.php', $redirect, $url);
+					$redirect = str_replace('pages/login.php', $redirect, $url);
 					header("Location: $redirect");
 					exit;
 				}
@@ -144,8 +144,8 @@
 		}
 
 		function logout() {
-			$roll_out = setcookie('College_enrol_sys[rollno]', '', -3600,'','','',true);
-			$pass_out = setcookie('College_enrol_sys[password]', '', -3600, '', '', '', true);
+			$roll_out = setcookie('College_enrol_sys[rollno]', '', -3600,'/','','',true);
+			$pass_out = setcookie('College_enrol_sys[password]', '', -3600, '/', '', '', true);
 
 			if($roll_out == true && $pass_out == true) {
 				return true;
@@ -157,7 +157,7 @@
 
 		function redirect_login($current) {
 			$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
-			$redirect = str_replace($current, 'login.php', $url);
+			$redirect = str_replace($current, 'pages/login.php', $url);
 			header("Location: $redirect?msg=login");
 			exit;
 		}
