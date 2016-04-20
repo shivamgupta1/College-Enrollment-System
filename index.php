@@ -20,6 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="images/favicon.ico" />
     <title>Home</title>
 
     <!-- Bootstrap Core CSS -->
@@ -148,16 +149,49 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
+            <div class="row">
+            	<div class="col-lg-12">
+            		<div class="panel panel-default">
+            			<div class="panel-heading">
+            				Here you can...
+            			</div>
+            			<div class="panel-body">
+            				<div class="row">
+            					<div class="col-lg-4">
+            						<div class="panel panel-info">
+            							<div class="panel-heading">View your profile</div>
+            							<div class="panel-body">
+            								<p> You can view and edit your profile by clicking the links below:</p>
+            								<p><a href="pages/profile.php"> View profile </a></p>
+            								<p><a href="pages/edit_profile.php">Edit profile</a></p>
+            							</div>
+            						</div>
+            					</div>
+            				</div>
+            				<!--./row-->
+            				<div class="row">
+            					<div class="col-lg-4">
+            						<div class="panel panel-success">
+            							<div class="panel-heading">View your Courses</div>
+            							<div class="panel-body">
+            								<p> You can view your courses here:</p>
+            								<p><a href="pages/courses.php"> Course Details </a></p>
+            							</div>
+            						</div>
+            					</div>
+            				</div>
+            				<!--./row-->
+            			</div>
+            		</div>
+            	</div>
+            </div>
         </div>
         <!-- /#page-wrapper -->
 
