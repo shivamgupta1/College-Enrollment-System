@@ -40,7 +40,7 @@ create table users (
 create table course (
 	course_id varchar(20),
 	instructor_id int,
-	course_name varchar(60),
+	course_name varchar(100),
 	course_details varchar(300),
 	primary key (course_id)
 );
@@ -57,3 +57,18 @@ create table instructor (
 	contact_email varchar(30),
 	profile_link varchar(60)
 );
+
+insert into course
+	values('DAA 430C', 1, 'Design and Analysis of Algorithms', 'Learn Algorithms and their design');
+insert into instructor
+	values(1, 'Amit Dhar', 'amit@iiita.ac.in', 'http://profile.iiita.ac.in/amitdhar');
+
+insert into course
+	values('IPPL 422C', 2, 'Principles of programming languages', 'Learn syntax and semantics of programming languages');
+insert into instructor
+	values(2, 'Jagpreet Singh', 'jagp@iiita.ac.in', "http://profile.iiita.ac.in/jagpreets");
+
+insert into course_allotted
+	values('B.Tech', 4, 'DAA 430C');
+insert into course_allotted
+	values('B.tech', 4, 'IPPL 422C');

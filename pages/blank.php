@@ -150,61 +150,6 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Your courses:
-                        </div>
-                        <div class="panel-body">
-                            <p> The courses listed below are specific to your academic programme: </p>
-                            <br />
-                            <?php
-                                $results = $obj->give_courses();
-                                if($results) {
-                                    $num_results = $results->num_rows;
-                                }
-                                else {
-                                    die("cannot execute queries");
-                                }
-                                if($num_results == 0) {
-                                    echo "<h4>No courses found</h4>";
-                                }
-                                else {
-                                    echo "<div class=\"table-responsive\">
-                                            <table class=\"table table-bordered table-striped\">
-                                                <thead>
-                                                    <tr>
-                                                        <th> Course ID </th>
-                                                        <th> Course Name </th>
-                                                        <th> Instructor </th>
-                                                        <th> Course Details </th>
-                                                        <th> Instructor Profile </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>";
-
-                                    for($i = 1; $i<=$num_results; $i++) {
-                                        $row = $results->fetch_row();
-                                        echo "<tr>
-                                            <td>$row[0]</td>
-                                            <td>$row[1]</td>
-                                            <td>$row[2]</td>
-                                            <td>$row[3]</td>
-                                            <td><a href=\"$row[4]\">Link</a></td>
-                                        </tr>";
-                                    }
-                                    echo "</tbody>
-                                        </table>
-                                        </div>";
-                                }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <!--/.col-lg-12-->
-            </div>
-            <!--./row-->           
         </div>
         <!-- /#page-wrapper -->
 
