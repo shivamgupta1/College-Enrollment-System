@@ -84,8 +84,14 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                        	<a href="http://iiita.ac.in"><img src="../images/iiita.png" height="100px" width="94.5px"/></a>
+                        	<a href="http://iiita.ac.in"><img src="../images/iiita.png" height="70px" width="66.1px"/></a>
                         </li>
+                        <li>
+                            <div>
+                                <br />
+                                <br />
+                            </div>
+                        </li>                        
                         <li>
                             <a href="../index.php"><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
                         </li>
@@ -179,7 +185,6 @@
                                                         <th> Course Name </th>
                                                         <th> Instructor </th>
                                                         <th> Course Details </th>
-                                                        <th> Instructor Profile </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>";
@@ -191,7 +196,6 @@
                                             <td>$row[1]</td>
                                             <td>$row[2]</td>
                                             <td>$row[3]</td>
-                                            <td><a href=\"$row[4]\">Link</a></td>
                                         </tr>";
                                     }
                                     echo "</tbody>
