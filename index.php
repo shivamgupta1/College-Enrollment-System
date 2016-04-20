@@ -68,7 +68,7 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo "$row[fname] $row[lname]"?></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="pages/settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="pages/login.php?action=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -84,8 +84,14 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                        	<a href="http://iiita.ac.in"><img src="images/iiita.png" height="100px" width="94.5px"/></a>
+                        	<a href="http://iiita.ac.in"><img src="images/iiita.png" height="70px" width="66.1px"/></a>
                         </li>
+                        <li>
+                            <div>
+                                <br />
+                                <br />
+                            </div>
+                        </li>                       
                         <li>
                             <a href=""><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
                         </li>
