@@ -160,7 +160,7 @@
             	<div class="col-lg-12">
             		<div class="panel panel-default">
             			<div class="panel-heading">
-            				Here you can...
+            				Welcome <?php echo "$row[fname]"?>, Here you can...
             			</div>
             			<div class="panel-body">
             				<div class="row">
@@ -171,6 +171,15 @@
             								<p> You can view and edit your profile by clicking the links below:</p>
             								<p><a href="pages/profile.php"> View profile </a></p>
             								<p><a href="pages/edit_profile.php">Edit profile</a></p>
+            							</div>
+            						</div>
+						</div>
+						<div class="col-lg-4">
+            						<div class="panel panel-danger">
+            							<div class="panel-heading">View your Instructors</div>
+            							<div class="panel-body">
+            								<p> You can view your Instructors here:</p>
+            								<p><a href="pages/instructors.php"> Instructor Details </a></p>
             							</div>
             						</div>
             					</div>
@@ -187,7 +196,7 @@
             						</div>
             					</div>
             				</div>
-            				<!--./row-->
+            					
             			</div>
             		</div>
             	</div>
