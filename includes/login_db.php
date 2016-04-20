@@ -39,12 +39,13 @@
 				$year_dob = $values['year_dob'];
 				$father = $values['father'];
 				$mother = $values['mother'];
+				$contact_number = $values['contact_number'];
 				$address_1 = $values['address_1'];
 				$address_2 = $values['address_2'];
 				$address_3 = $values['address_3'];
 				$category = $values['category'];
 				$department = $values['department'];
-				$course = $values['course'];
+				$programme = $values['programme'];
 				$batch = $values['batch'];
 				$semester = $values['semester'];
 				$password = $values['password'];
@@ -73,8 +74,8 @@
 				$query = "insert into $table_name
 							values ( '".$rollno."', '".$fname."', '".$lname."', '".$sex."', '".
 									$date_dob."', '".$month_dob."', '".$year_dob."', '".$father."', '".
-									$mother."', '".$address_1."', '".$address_2."', '".$address_3."', '".$category."', '".
-									$department."', '".$course."', '".$batch."', '".
+									$mother."', '".$contact_number."', '".$address_1."', '".$address_2."', '".$address_3."', '".$category."', '".
+									$department."', '".$programme."', '".$batch."', '".
 									$semester."', '".$password."', '".$regdate."')";
 				
 				$result = $this->db->query($query);
@@ -222,6 +223,22 @@
 			$results = $this->db->query($query);
 			$row = $results->fetch_assoc();
 			return $row;
+		}
+
+		function give_courses() {
+			$course_table = "course";
+			$allocated_table = "course_allotted";
+			$instructor_table = "instructor";
+			
+			$row = $this->give_row();
+			$semester = $row['semester'];
+			$programme = $row['programme'];
+
+			$query = "select $course_table.course_id, $course_table.course_name, $instructor_table.instructor_name, $course_table.course_details, $instructor_table.profile_link
+					from $allocated_table natural join $course_table natural join $instructor_table
+					where $allocated_table.programme = '".$programme."' and $allocated_table.semester = '".$semester."'";
+			$results = $this->db->query($query);
+			return $results;
 		}
 	}
 

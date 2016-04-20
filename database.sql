@@ -13,6 +13,8 @@ create table users (
 		father varchar(60),
 		mother varchar(60),
 
+		contact_number numeric(11),
+
 
 		address_1 varchar(60),
 		address_2 varchar(60),
@@ -22,7 +24,7 @@ create table users (
 
 		department varchar(60),
 
-		course varchar(20),
+		programme varchar(20),
 
 		batch varchar(10),
 
@@ -34,3 +36,39 @@ create table users (
 
 		primary key (rollno)
 );
+
+create table course (
+	course_id varchar(20),
+	instructor_id int,
+	course_name varchar(100),
+	course_details varchar(300),
+	primary key (course_id)
+);
+
+create table course_allotted (
+	programme varchar(20),
+	semester int,
+	course_id varchar(20)
+);
+
+create table instructor (
+	instructor_id int,
+	instructor_name varchar(60),
+	contact_email varchar(30),
+	profile_link varchar(60)
+);
+
+insert into course
+	values('DAA 430C', 1, 'Design and Analysis of Algorithms', 'Learn Algorithms and their design');
+insert into instructor
+	values(1, 'Amit Dhar', 'amit@iiita.ac.in', 'http://profile.iiita.ac.in/amitdhar');
+
+insert into course
+	values('IPPL 422C', 2, 'Principles of programming languages', 'Learn syntax and semantics of programming languages');
+insert into instructor
+	values(2, 'Jagpreet Singh', 'jagp@iiita.ac.in', "http://profile.iiita.ac.in/jagpreets");
+
+insert into course_allotted
+	values('B.Tech', 4, 'DAA 430C');
+insert into course_allotted
+	values('B.tech', 4, 'IPPL 422C');

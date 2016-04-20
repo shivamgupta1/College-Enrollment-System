@@ -20,19 +20,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="images/favicon.ico" />
     <title>Home</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,13 +84,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                        	<div>
-                        		<br />
-                        		<br />
-                        		<br />
-                        		<br />
-                        		<br />
-                        	</div>
+                        	<a href="http://iiita.ac.in"><img src="images/iiita.png" height="100px" width="94.5px"/></a>
                         </li>
                         <li>
                             <a href=""><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
@@ -99,6 +94,32 @@
                         </li>
                         <li>
                             <a href="pages/instructors.php"><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
+                        </li>
+                        <li>
+                        	<a href="#"><i class="glyphicon glyphicon-download-alt"></i> &nbsp&nbspDownloads<span class="fa arrow"></span></a>
+                        	<ul class="nav nav-second-level">
+                        		<li>
+                        			<a href="files/time_table.pdf"><i class="glyphicon glyphicon-calendar"></i> &nbsp&nbspTime Table</a>
+                        		</li>
+                        		<li>
+                        			<a href="files/academic_calender.pdf"><i class="glyphicon glyphicon-list-alt"></i> &nbsp&nbspAcademic Calender</a>
+                        		</li>
+                        		<li>
+                        			<a href="files/fee_structure.pdf"><i class="glyphicon glyphicon-usd"></i> &nbsp&nbspFee Structure</a>
+                        		</li>
+                        		<li>
+                        			<a href="files/ug_manual.pdf"><i class="glyphicon glyphicon-file"></i> &nbsp&nbspUG manual</a>
+                        		</li>
+                        		<li>
+                        			<a href="files/pg_manual.pdf"><i class="glyphicon glyphicon-education"></i> &nbsp&nbspPG manual</a>
+                        		</li>
+                        		<li>
+                        			<a href="files/transport_schedule.pdf"><i class="glyphicon glyphicon-bed"></i> &nbsp&nbspTransport Schedule</a>
+                        		</li>
+                        		<li>
+                        			<a href="files/telephone_directory.pdf"><i class="glyphicon glyphicon-phone-alt"></i> &nbsp&nbspTelephone Directory</a>
+                        		</li>
+                        	</ul>
                         </li>
                         <li>
                             <a href="pages/settings.php"><i class="glyphicon glyphicon-wrench"></i> &nbsp&nbspSettings</a>
@@ -122,16 +143,49 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
+            <div class="row">
+            	<div class="col-lg-12">
+            		<div class="panel panel-default">
+            			<div class="panel-heading">
+            				Here you can...
+            			</div>
+            			<div class="panel-body">
+            				<div class="row">
+            					<div class="col-lg-4">
+            						<div class="panel panel-info">
+            							<div class="panel-heading">View your profile</div>
+            							<div class="panel-body">
+            								<p> You can view and edit your profile by clicking the links below:</p>
+            								<p><a href="pages/profile.php"> View profile </a></p>
+            								<p><a href="pages/edit_profile.php">Edit profile</a></p>
+            							</div>
+            						</div>
+            					</div>
+            				</div>
+            				<!--./row-->
+            				<div class="row">
+            					<div class="col-lg-4">
+            						<div class="panel panel-success">
+            							<div class="panel-heading">View your Courses</div>
+            							<div class="panel-body">
+            								<p> You can view your courses here:</p>
+            								<p><a href="pages/courses.php"> Course Details </a></p>
+            							</div>
+            						</div>
+            					</div>
+            				</div>
+            				<!--./row-->
+            			</div>
+            		</div>
+            	</div>
+            </div>
         </div>
         <!-- /#page-wrapper -->
 
@@ -139,16 +193,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="dist/js/sb-admin-2.js"></script>
 
 </body>
 
