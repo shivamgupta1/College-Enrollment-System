@@ -42,6 +42,23 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<script>
+		function validatePassword() {
+			var pass = document.getElementById("password").value;
+			var cpass = document.getElementById("cpassword").value;
+			if (pass == cpass) {
+				return true;
+			} else {
+				document.getElementById("cpassword").style.background = '#e35152';
+				document.getElementById("passwordError").style.display = "block";
+				return false;
+			}
+		}
+		function validateForm() {
+			return validatePassword();
+		}
+	</script>
+
 
 </head>
 
@@ -67,30 +84,31 @@
                     	<h3 class="panel-title">Registration</h3>
                 	</div>
 					<div class="panel-body">
-						<form role="form" class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+						<form role="form" class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm()">
 							<fieldset>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Roll Number (Username): </label>
 									<div class="col-sm-8">
-										<input class="form-control" placeholder="eg. iit2014001" type="text" name="rollno" autofocus/>
+										<input class="form-control" placeholder="eg. iit2014001" type="text" name="rollno" autofocus required/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Password: </label>
 									<div class="col-sm-8">
-										<input class="form-control" placeholder="Password" type="password" name="password" />
+										<input class="form-control" placeholder="Password" type="password" id="password" name="password" required/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Confirm Password: </label>
 									<div class="col-sm-8">
-										<input class="form-control" placeholder="Retype Password" type="password" name="cpassword" />
+										<input class="form-control" placeholder="Retype Password" type="password" name="cpassword" id="cpassword" onblur="validatePassword()" required/>
+									<span style="display: none;" id="passwordError">Passwords do not match</span>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">First Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" placeholder="eg. John" type="text" name="fname" value=""/>
+										<input class="form-control" placeholder="eg. John" type="text" name="fname" value="" required/>
 									</div>
 								</div>
 								<div class="form-group">
@@ -149,13 +167,13 @@
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Father's Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" placeholder="Father's name" type="text" name="father"/>
+										<input class="form-control" placeholder="Father's name" type="text" name="father" required/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Mother's Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" placeholder="Mother's name" type="text" name="mother"/>
+										<input class="form-control" placeholder="Mother's name" type="text" name="mother" required/>
 									</div>
 								</div>
 								<div class="form-group">
