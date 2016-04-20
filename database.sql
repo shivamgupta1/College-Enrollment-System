@@ -13,7 +13,7 @@ create table users (
 		father varchar(60),
 		mother varchar(60),
 
-		contact_number numeric(11),
+		contact_number varchar(20),
 
 
 		address_1 varchar(60),

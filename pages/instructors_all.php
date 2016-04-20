@@ -175,7 +175,7 @@
                                     die("cannot execute queries");
                                 }
                                 if($num_results == 0) {
-                                    echo "<h4>No courses found</h4>";
+                                    echo "<h4>No instructors found</h4>";
                                 }
                                 else {
                                     echo "<div class=\"table-responsive\">
