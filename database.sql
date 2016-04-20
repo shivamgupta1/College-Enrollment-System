@@ -36,3 +36,24 @@ create table users (
 
 		primary key (rollno)
 );
+
+create table course (
+	course_id varchar(20),
+	instructor_id int,
+	course_name varchar(60),
+	course_details varchar(300),
+	primary key (course_id)
+);
+
+create table course_allotted (
+	programme varchar(20),
+	semester int,
+	course_id varchar(20)
+);
+
+create table instructor (
+	instructor_id int,
+	instructor_name varchar(60),
+	contact_email varchar(30),
+	profile_link varchar(60)
+);
