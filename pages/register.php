@@ -15,6 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="../images/favicon.ico" />
     <title>Registration Portal</title>
 
     <!-- Bootstrap Core CSS -->

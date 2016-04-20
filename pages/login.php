@@ -26,6 +26,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="../images/favicon.ico" />
     <title>Login Portal</title>
 
     <!-- Bootstrap Core CSS -->
