@@ -84,13 +84,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                        	<div>
-                        		<br />
-                        		<br />
-                        		<br />
-                        		<br />
-                        		<br />
-                        	</div>
+                        	<a href="http://iiita.ac.in"><img src="images/iiita.png" height="100px" width="94.5px"/></a>
                         </li>
                         <li>
                             <a href=""><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
