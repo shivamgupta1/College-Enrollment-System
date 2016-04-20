@@ -159,14 +159,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Category: </label>
-									<div class="col-sm-4">
-										<select class="form-control"name="category">
-											<option value="General">General</option>
-											<option value="SC">SC</option>
-											<option value="ST">ST</option>
-											<option value="OBC-NCL">OBC-NCL</option>
-										</select>
+									<label class="col-sm-4 control-label">Contact Number: </label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="eg. 91447284xx" type="text" name="contact_number"/>
 									</div>
 								</div>
 								<div class="form-group">
@@ -177,6 +172,17 @@
 										<input class="form-control" placeholder="Zip code" type="text" name="address_3" />
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Category: </label>
+									<div class="col-sm-4">
+										<select class="form-control"name="category">
+											<option value="General">General</option>
+											<option value="SC">SC</option>
+											<option value="ST">ST</option>
+											<option value="OBC-NCL">OBC-NCL</option>
+										</select>
+									</div>
+								</div>								
 								<div class="form-group">	
 									<label class="col-sm-4 control-label">Department: </label>
 									<div class="col-sm-8">
@@ -193,9 +199,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Course: </label>
+									<label class="col-sm-4 control-label">Programme: </label>
 									<div class="col-sm-3">
-										<select class="form-control" name="course">
+										<select class="form-control" name="programme">
 											<option value="B.Tech">B.Tech</option>
 											<option value="M.tech">M.Tech</option>
 											<option value="B.Tech-M.Tech Dual">B.Tech-M.Tech Dual</option>

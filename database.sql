@@ -13,6 +13,8 @@ create table users (
 		father varchar(60),
 		mother varchar(60),
 
+		contact_number numeric(11),
+
 
 		address_1 varchar(60),
 		address_2 varchar(60),
@@ -22,7 +24,7 @@ create table users (
 
 		department varchar(60),
 
-		course varchar(20),
+		programme varchar(20),
 
 		batch varchar(10),
 
