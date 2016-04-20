@@ -48,13 +48,11 @@
 			var cpass = document.getElementById("cpassword").value;
 			if (pass == cpass) {
 				document.getElementById("cpassword").style.background = '#6FDC6F';
-				document.getElementById("passwordMatch").style.display = "block";
-				document.getElementById("passwordError").style.display = "none";
+				document.getElementById("passwordError").innerHTML="Passwords match";
 				return true;
 			} else {
 				document.getElementById("cpassword").style.background = '#e35152';
-				document.getElementById("passwordError").style.display = "block";
-				document.getElementById("passwordMatch").style.display = "none";
+				document.getElementById("passwordError").innerHTML = "Passwords do not match";
 				return false;
 			}
 		}
@@ -90,6 +88,7 @@
 					<div class="panel-body">
 						<form role="form" class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm()">
 							<fieldset>
+								<legend>Login Information</legend>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Roll Number (Username): </label>
 									<div class="col-sm-8">
@@ -106,10 +105,13 @@
 									<label class="col-sm-4 control-label">Confirm Password: </label>
 									<div class="col-sm-8">
 										<input class="form-control" placeholder="Retype Password" type="password" name="cpassword" id="cpassword" onblur="validatePassword()" required/>
-									<span style="display: none;" id="passwordError">Passwords do not match</span>
-									<span style="display: none;" id="passwordMatch">Passwords match</span>
+									<span id="passwordError"></span>
 									</div>
 								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Personal Information</legend>
+
 								<div class="form-group">
 									<label class="col-sm-4 control-label">First Name: </label>
 									<div class="col-sm-8">
@@ -169,6 +171,9 @@
 										</div>
 									</div>
 								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Parents/Gaurdian's Information</legend>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Father's Name: </label>
 									<div class="col-sm-8">
@@ -195,6 +200,9 @@
 										<input class="form-control" placeholder="Zip code" type="text" name="address_3" />
 									</div>
 								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Academic Information</legend>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Category: </label>
 									<div class="col-sm-4">
