@@ -47,10 +47,14 @@
 			var pass = document.getElementById("password").value;
 			var cpass = document.getElementById("cpassword").value;
 			if (pass == cpass) {
+				document.getElementById("cpassword").style.background = '#6FDC6F';
+				document.getElementById("passwordMatch").style.display = "block";
+				document.getElementById("passwordError").style.display = "none";
 				return true;
 			} else {
 				document.getElementById("cpassword").style.background = '#e35152';
 				document.getElementById("passwordError").style.display = "block";
+				document.getElementById("passwordMatch").style.display = "none";
 				return false;
 			}
 		}
@@ -103,6 +107,7 @@
 									<div class="col-sm-8">
 										<input class="form-control" placeholder="Retype Password" type="password" name="cpassword" id="cpassword" onblur="validatePassword()" required/>
 									<span style="display: none;" id="passwordError">Passwords do not match</span>
+									<span style="display: none;" id="passwordMatch">Passwords match</span>
 									</div>
 								</div>
 								<div class="form-group">
