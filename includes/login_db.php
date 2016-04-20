@@ -256,6 +256,36 @@
 			$results = $this->db->query($query);
 			return $results;
 		}
+
+		function give_all_courses() {
+			$course_table = "course";
+			$allocated_table = "course_allotted";
+			$instructor_table = "instructor";
+			
+			$row = $this->give_row();
+			$semester = $row['semester'];
+			$programme = $row['programme'];
+
+			$query = "select $course_table.course_id, $course_table.course_name, $instructor_table.instructor_name, $course_table.course_details
+					from $allocated_table natural join $course_table natural join $instructor_table";
+			$results = $this->db->query($query);
+			return $results;
+		}
+
+		function give_all_instructors() {
+			$course_table = "course";
+			$allocated_table = "course_allotted";
+			$instructor_table = "instructor";
+			
+			$row = $this->give_row();
+			$semester = $row['semester'];
+			$programme = $row['programme'];
+
+			$query = "select distinct $instructor_table.instructor_name, $instructor_table.contact_email, $instructor_table.profile_link
+					from $allocated_table natural join $course_table natural join $instructor_table";
+			$results = $this->db->query($query);
+			return $results;
+		}		
 	}
 
 	//Instantiating the class

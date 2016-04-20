@@ -3,7 +3,7 @@
     require('../includes/login_db.php');
 
     if(!($obj->check_login())) {
-        $obj->redirect_login('pages/instructors.php');
+        $obj->redirect_login('pages/instructors_all.php');
     };
     
     $row = $obj->give_row();
@@ -21,7 +21,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <title>Instructors</title>
+    <title>All Instructors</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -99,7 +99,7 @@
                             <a href="courses.php"><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
                         </li>
                         <li>
-                            <a href=""><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
+                            <a href="instructors.php"><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
                         </li>
                         <li>
                         	<a href="#"><i class="glyphicon glyphicon-download-alt"></i> &nbsp&nbspDownloads<span class="fa arrow"></span></a>
@@ -151,7 +151,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Instructors</h1>
+                    <h1 class="page-header">All Instructors</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -160,14 +160,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Your instructors:
+                            Instructors' list:
                         </div>
                         <div class="panel-body">
-                            <p> The instructors related to your academic programme courses and their contact information are listed below: </p>
-                            <p><a href="instructors_all.php"> Click here</a> to view the list of all the instructors</p>
+                            <p> The instructors related to ALL academic programme courses and their contact information are listed below: </p>
+                            <p><a href="instructors.php">Click here</a> to view instructors related to your academic programme</p>
                             <br />
                             <?php
-                                $results = $obj->give_instructors();
+                                $results = $obj->give_all_instructors();
                                 if($results) {
                                     $num_results = $results->num_rows;
                                 }

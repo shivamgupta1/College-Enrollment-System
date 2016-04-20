@@ -3,7 +3,7 @@
     require('../includes/login_db.php');
 
     if(!($obj->check_login())) {
-        $obj->redirect_login('pages/instructors.php');
+        $obj->redirect_login('pages/courses_all.php');
     };
     
     $row = $obj->give_row();
@@ -21,7 +21,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <title>Instructors</title>
+    <title>All Courses</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +91,7 @@
                                 <br />
                                 <br />
                             </div>
-                        </li>
+                        </li>                        
                         <li>
                             <a href="../index.php"><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
                         </li>
@@ -99,7 +99,7 @@
                             <a href="courses.php"><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
                         </li>
                         <li>
-                            <a href=""><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
+                            <a href="instructors.php"><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
                         </li>
                         <li>
                         	<a href="#"><i class="glyphicon glyphicon-download-alt"></i> &nbsp&nbspDownloads<span class="fa arrow"></span></a>
@@ -151,7 +151,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Instructors</h1>
+                    <h1 class="page-header">All Courses</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -160,14 +160,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Your instructors:
+                            Course List:
                         </div>
                         <div class="panel-body">
-                            <p> The instructors related to your academic programme courses and their contact information are listed below: </p>
-                            <p><a href="instructors_all.php"> Click here</a> to view the list of all the instructors</p>
+                            <p> Following is the list of all the academic courses: </p>
+                            <p><a href="courses.php">Click here</a> to view courses specific to your academic programme</p>
                             <br />
                             <?php
-                                $results = $obj->give_instructors();
+                                $results = $obj->give_all_courses();
                                 if($results) {
                                     $num_results = $results->num_rows;
                                 }
@@ -175,16 +175,17 @@
                                     die("cannot execute queries");
                                 }
                                 if($num_results == 0) {
-                                    echo "<h4>No instructors found</h4>";
+                                    echo "<h4>No courses found</h4>";
                                 }
                                 else {
                                     echo "<div class=\"table-responsive\">
                                             <table class=\"table table-bordered table-striped\">
                                                 <thead>
                                                     <tr>
-                                                        <th> Instructor Name </th>
-                                                        <th> Contact e-mail </th>
-                                                        <th> Profile link </th>
+                                                        <th> Course ID </th>
+                                                        <th> Course Name </th>
+                                                        <th> Instructor </th>
+                                                        <th> Course Details </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>";
@@ -194,7 +195,8 @@
                                         echo "<tr>
                                             <td>$row[0]</td>
                                             <td>$row[1]</td>
-                                            <td><a href =\"$row[2]\">Link</a></td>
+                                            <td>$row[2]</td>
+                                            <td>$row[3]</td>
                                         </tr>";
                                     }
                                     echo "</tbody>
