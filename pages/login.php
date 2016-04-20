@@ -1,9 +1,17 @@
 <?php
-	require('includes/config.php');
-	require('includes/login_db.php');
+	require('../includes/config.php');
+	require('../includes/login_db.php');
+
 	if(isset($_GET['action']) && $_GET['action']=='logout') {
 		$loggedout = $obj->logout();
 	}
+
+    if($obj->check_login()) {
+        $url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+        $redirect = str_replace('pages/login.php', 'index.php', $url);
+        header("Location: $redirect");
+        exit;
+    }
 	$logged = $obj->login('index.php'); 
 ?>
 
@@ -21,19 +29,19 @@
     <title>Login Portal</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <style>
     	body {
-    		background: url("images/photo_bg.jpg") no-repeat center center fixed;
+    		background: url("../images/photo_bg.jpg") no-repeat center center fixed;
 			background-size: cover;
     	}
     </style>
@@ -58,7 +66,7 @@
                 </button>
                 <a class="navbar-brand" href="" >College Enrollment System</a>
             </div>
-            <a href="http://iiita.ac.in"><img src="images/logo.png" class="nav navbar-top-links navbar-right" width="350px" height="49px"></a>
+            <a href="http://iiita.ac.in"><img src="../images/logo.png" class="nav navbar-top-links navbar-right" width="350px" height="49px"></a>
         </nav>
         <div class="container">
         	<div class="row">

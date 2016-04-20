@@ -1,7 +1,7 @@
 <?php
-	require('includes/config.php');
-	require('includes/login_db.php');
-	$obj->register('login.php');
+	require('../includes/config.php');
+	require('../includes/login_db.php');
+	$obj->register('pages/login.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,28 +18,21 @@
     <title>Registration Portal</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <style>
     	body {
-    		background: url("images/photo_bg.jpg") no-repeat center center fixed;
+    		background: url("../images/photo_bg.jpg") no-repeat center center fixed;
 			background-size: cover;
     	}
-    	td {
-    		padding:13px 30px 13px 30px;
-    	}
-    	.adr {
-    		padding:0px 30px 0px 30px;
-    	}
-
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -62,7 +55,7 @@
             </button>
             <a class="navbar-brand" href="" >College Enrollment System</a>
         </div>
-        <a href="http://iiita.ac.in"><img src="images/logo.png" class="nav navbar-top-links navbar-right" width="350px" height="49px"></a>
+        <a href="http://iiita.ac.in"><img src="../images/logo.png" class="nav navbar-top-links navbar-right" width="350px" height="49px"></a>
     </nav>
 
     <div class="container">
