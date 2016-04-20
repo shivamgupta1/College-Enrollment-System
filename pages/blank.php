@@ -3,7 +3,7 @@
     require('../includes/login_db.php');
 
     if(!($obj->check_login())) {
-        $obj->redirect_login('pages/courses.php');
+        $obj->redirect_login('pages/blank.php');
     };
     
     $row = $obj->give_row();
@@ -66,9 +66,9 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo "$row[fname] $row[lname]"?></a>
+                        <li><a href="profile.php"><i class="fa fa-user fa-fw"></i> <?php echo "$row[fname] $row[lname]"?></a>
                         </li>
-                        <li><a href="pages/settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="login.php?action=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

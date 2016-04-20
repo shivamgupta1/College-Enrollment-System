@@ -3,7 +3,7 @@
     require('../includes/login_db.php');
 
     if(!($obj->check_login())) {
-        $obj->redirect_login('pages/courses.php');
+        $obj->redirect_login('pages/instructors_all.php');
     };
     
     $row = $obj->give_row();
@@ -21,7 +21,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <title>Courses</title>
+    <title>All Instructors</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -91,12 +91,12 @@
                                 <br />
                                 <br />
                             </div>
-                        </li>                        
+                        </li>
                         <li>
                             <a href="../index.php"><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
                         </li>
                         <li>
-                            <a href=""><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
+                            <a href="courses.php"><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
                         </li>
                         <li>
                             <a href="instructors.php"><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
@@ -151,7 +151,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Courses</h1>
+                    <h1 class="page-header">All Instructors</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -160,14 +160,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Your courses:
+                            Instructors' list:
                         </div>
                         <div class="panel-body">
-                            <p> The courses listed below are specific to your academic programme: </p>
-                            <p><a href="courses_all.php">Click here</a> to view the list of all courses</p>
+                            <p> The instructors related to ALL academic programme courses and their contact information are listed below: </p>
+                            <p><a href="instructors.php">Click here</a> to view instructors related to your academic programme</p>
                             <br />
                             <?php
-                                $results = $obj->give_courses();
+                                $results = $obj->give_all_instructors();
                                 if($results) {
                                     $num_results = $results->num_rows;
                                 }
@@ -182,10 +182,9 @@
                                             <table class=\"table table-bordered table-striped\">
                                                 <thead>
                                                     <tr>
-                                                        <th> Course ID </th>
-                                                        <th> Course Name </th>
-                                                        <th> Instructor </th>
-                                                        <th> Course Details </th>
+                                                        <th> Instructor Name </th>
+                                                        <th> Contact e-mail </th>
+                                                        <th> Profile link </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>";
@@ -195,8 +194,7 @@
                                         echo "<tr>
                                             <td>$row[0]</td>
                                             <td>$row[1]</td>
-                                            <td>$row[2]</td>
-                                            <td>$row[3]</td>
+                                            <td><a href =\"$row[2]\">Link</a></td>
                                         </tr>";
                                     }
                                     echo "</tbody>

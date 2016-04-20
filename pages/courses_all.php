@@ -3,7 +3,7 @@
     require('../includes/login_db.php');
 
     if(!($obj->check_login())) {
-        $obj->redirect_login('pages/courses.php');
+        $obj->redirect_login('pages/courses_all.php');
     };
     
     $row = $obj->give_row();
@@ -21,7 +21,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <title>Courses</title>
+    <title>All Courses</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -96,7 +96,7 @@
                             <a href="../index.php"><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
                         </li>
                         <li>
-                            <a href=""><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
+                            <a href="courses.php"><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
                         </li>
                         <li>
                             <a href="instructors.php"><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>
@@ -151,7 +151,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Courses</h1>
+                    <h1 class="page-header">All Courses</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -160,14 +160,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Your courses:
+                            Course List:
                         </div>
                         <div class="panel-body">
-                            <p> The courses listed below are specific to your academic programme: </p>
-                            <p><a href="courses_all.php">Click here</a> to view the list of all courses</p>
+                            <p> Following is the list of all the academic courses: </p>
+                            <p><a href="courses.php">Click here</a> to view courses specific to your academic programme</p>
                             <br />
                             <?php
-                                $results = $obj->give_courses();
+                                $results = $obj->give_all_courses();
                                 if($results) {
                                     $num_results = $results->num_rows;
                                 }

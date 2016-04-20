@@ -66,7 +66,7 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo "$row[fname] $row[lname]"?></a>
+                        <li><a href="profile.php"><i class="fa fa-user fa-fw"></i> <?php echo "$row[fname] $row[lname]"?></a>
                         </li>
                         <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -164,6 +164,7 @@
                         </div>
                         <div class="panel-body">
                             <p> The instructors related to your academic programme courses and their contact information are listed below: </p>
+                            <p><a href="instructors_all.php"> Click here</a> to view the list of all the instructors</p>
                             <br />
                             <?php
                                 $results = $obj->give_instructors();
