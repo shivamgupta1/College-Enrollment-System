@@ -285,7 +285,29 @@
 					from $allocated_table natural join $course_table natural join $instructor_table";
 			$results = $this->db->query($query);
 			return $results;
-		}		
+		}
+		function update_personal($rollno) {
+			$table_name = "users";
+
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+				$values = $this->clean($_POST);
+				$fname = $values['fname'];
+				$lname = $values['lname'];
+				$sex = $values['sex'];
+				$date_dob = $values['date_dob'];
+				$month_dob = $values['month_dob'];
+				$year_dob = $values['year_dob'];
+
+				$query = "UPDATE $table_name SET 'fname' = '".$fname."', 'lname' = '".$lname."', 'sex' = '".$sex."', 'date_dob' = '".$date_dob."', 'month_dob' = '".$month_dob."', 'year_dob' = '".$year_dob."' WHERE rollno = '".$rollno."'";
+				$result = $this->db->query($query);
+				if ($result) {
+					die("Success");
+				} else {
+					die("filaure");
+				}
+			}
+		}
+				
 	}
 
 	//Instantiating the class
