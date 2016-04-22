@@ -170,7 +170,7 @@ $obj->update_personal("$row[rollno]");
 								<fieldset>
 									<div class="form-group">
 										<label for="rollno">Roll no.</label>
-										<input class="form-control" type="text" name="rollno" value="<?php echo "$row[rollno]"?>" disabled>
+										<input class="form-control" type="text" name="rollno" value="<?php echo "$row[rollno]"?>" readonly>
 									</div>
 								</fieldset>
 								<fieldset>

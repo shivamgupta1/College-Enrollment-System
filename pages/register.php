@@ -109,6 +109,7 @@
 									</div>
 								</div>
 							</fieldset>
+							<br />
 							<fieldset>
 								<legend>Personal Information</legend>
 
@@ -172,8 +173,9 @@
 									</div>
 								</div>
 							</fieldset>
+							<br />
 							<fieldset>
-								<legend>Parents/Gaurdian's Information</legend>
+								<legend>Parents'/Guardian's Information</legend>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Father's Name: </label>
 									<div class="col-sm-8">
@@ -201,6 +203,7 @@
 									</div>
 								</div>
 							</fieldset>
+							<br />
 							<fieldset>
 								<legend>Academic Information</legend>
 								<div class="form-group">
