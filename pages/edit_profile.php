@@ -3,10 +3,18 @@ require('../includes/config.php');
 require('../includes/login_db.php');
 
 if(!($obj->check_login())) {
-	$obj->redirect_login('pages/profile.php');
+	$obj->redirect_login('pages/edit_profile.php');
 };
 
 $row = $obj->give_row();
+
+//call function here
+$obj->update_personal($row['rollno']);
+
+if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+	$row = $_POST;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +29,7 @@ $row = $obj->give_row();
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <title>Profile</title>
+    <title>Edit Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -151,77 +159,95 @@ $row = $obj->give_row();
 	<div id="page-wrapper">
 	    <div class="row">
 			<div class="col-lg-12">
-		    	<h1 class="page-header">Profile</h1>
+		    	<h1 class="page-header">Edit Profile</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 	    </div>
 	    <!-- /.row -->
 	    <div class="row">
-			<div class="col-md-7">
-				<div class="panel panel-green">
-					<div class="panel-heading">
-						View your profile here
-					</div>
+			<div class="col-md-7 col-md-offset-1">
+            	<div class="panel panel-default">
+                	<div class="panel-heading">
+                    	<h3 class="panel-title">Update your info</h3>
+                	</div>
 					<div class="panel-body">
-						<form role="form" class="form-horizontal" action="edit_profile.php" method="post" id="myForm">
-							<?php if(isset($_GET['update']) && $_GET['update']=="success") : ?>
-								<fieldset>
-									<br />
-									<p class="text-success">Your profile was updated successfully.</p>
-									<br />
-								</fieldset>
-							<?php endif;?>
+						<form role="form" class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" >
 							<fieldset>
 								<legend>Login Information</legend>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Roll Number (Username): </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="rollno" value ="<?= $row['rollno']?>" readonly autofocus/>
+										<input class="form-control" type="text" name="rollno" value="<?= $row['rollno']?>" autofocus readonly/>
 									</div>
-								</div>
 							</fieldset>
 							<br />
 							<fieldset>
 								<legend>Personal Information</legend>
+
 								<div class="form-group">
 									<label class="col-sm-4 control-label">First Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="fname" value="<?= $row['fname']?>" readonly/>
+										<input class="form-control" type="text" name="fname" value="<?= $row['fname']?>" required/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Last Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="lname" value="<?= $row['lname']?>" readonly/>
+										<input class="form-control" type="text" name="lname" value="<?= $row['lname']?>" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Sex: </label>
 									<div class="col-sm-8">
 									    <label class="radio-inline">
-	                                        <input type="radio" name="sex" value="Male" <?php if($row['sex']=="Male") echo 'checked';?> disabled>Male
-	                                    </label>
-	                                    <label class="radio-inline">
-	                                        <input type="radio" name="sex" value="Female" <?php if($row['sex']=="Female") echo 'checked';?> disabled>Female
-	                                    </label>
+                                            <input type="radio" name="sex" value="Male" <?php if($row['sex']=="Male") echo 'checked';?>>Male
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="sex" value="Female" <?php if($row['sex']=="Female") echo 'checked';?>>Female
+                                        </label>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Date of Birth:</label>
+									<label class="col-sm-4 control-label">Date of birth: </label>
 									<div class="col-sm-8">
 										<div class="col-xs-4">
 											<select class="form-control" name="date_dob">
-												<option value="<?php echo "$row[date_dob]" ?>"><?php echo "$row[date_dob]" ?></option>
+												<option value="null">DD</option>
+												<?php
+													for($i=1; $i<=31; $i++) {
+														if($i==$row['date_dob'])
+															printf("<option value=\"%02u\" selected> %02u </option>",$i, $i);
+														else
+															printf("<option value=\"%02u\"> %02u </option>",$i, $i);
+													}
+												?>
+											}
 											</select>
 										</div>
 										<div class="col-xs-4">
 											<select class="form-control" name="month_dob">
-												<option value="<?php echo "$row[month_dob]" ?>"><?php echo "$row[month_dob]" ?></option>
+												<option value="null">MM</option>
+												<?php
+													for($i=1; $i<=12; $i++) {
+														if($i==$row['month_dob'])
+															printf("<option value=\"%02u\" selected> %02u </option>",$i, $i);
+														else
+															printf("<option value=\"%02u\" > %02u </option>",$i, $i);
+													}
+												?>
 											</select>
 										</div>
 										<div class="col-xs-4">
 											<select class="form-control" name="year_dob">
-												<option value="<?php echo "$row[year_dob]" ?>"><?php echo "$row[year_dob]" ?></option>				
+												<option value="null">YYYY</option>
+												<?php
+													for($i=2006; $i>=1985; $i--) {
+														if($i==$row['year_dob'])
+															echo "<option value=\"$i\" selected> $i </option>";
+														else
+															echo "<option value=\"$i\" > $i </option>";
+													}
+												?>
 											</select>
 										</div>
 									</div>
@@ -233,27 +259,27 @@ $row = $obj->give_row();
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Father's Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="father" value="<?= $row['father']?>" readonly/>
+										<input class="form-control" type="text" name="father" value="<?= $row['father']?>" required/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Mother's Name: </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="mother" value="<?= $row['mother']?>" readonly/>
+										<input class="form-control" type="text" name="mother" value="<?= $row['mother']?>" required/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Contact Number: </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="contact_number" value="<?= $row['contact_number']?>" readonly/>
+										<input class="form-control" type="text" name="contact_number" value="<?= $row['contact_number']?>" required	/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Address: </label>
 									<div class="col-sm-8">
-										<input class="form-control" type="text" name="address_1" value="<?= $row['address_1']?>" readonly/>
-										<input class="form-control" type="text" name="address_2" value="<?= $row['address_2']?>" readonly/>
-										<input class="form-control" type="text" name="address_3" value="<?= $row['address_3']?>" readonly/>
+										<input class="form-control" type="text" name="address_1" value="<?= $row['address_1']?>"/>
+										<input class="form-control" type="text" name="address_2" value="<?= $row['address_2']?>"/>
+										<input class="form-control" type="text" name="address_3" value="<?= $row['address_3']?>"/>
 									</div>
 								</div>
 							</fieldset>
@@ -264,30 +290,36 @@ $row = $obj->give_row();
 									<label class="col-sm-4 control-label">Category: </label>
 									<div class="col-sm-4">
 										<select class="form-control"name="category">
-											<option value="<?= $row['category']?>"><?= $row['category']?></option>
+											<option value="General" <?php if($row['category']=="General") echo 'selected';?>>General</option>
+											<option value="SC" <?php if($row['category']=="SC") echo 'selected';?>>SC</option>
+											<option value="ST" <?php if($row['category']=="ST") echo 'selected';?>>ST</option>
+											<option value="OBC-NCL" <?php if($row['category']=="OBC-NCL") echo 'selected';?>>OBC-NCL</option>
 										</select>
 									</div>
 								</div>								
 								<div class="form-group">	
 									<label class="col-sm-4 control-label">Department: </label>
 									<div class="col-sm-8">
-	                                    <div class="radio">
-	                                        <label>
-	                                      	  <input type="radio" name="department" value="I.T" <?php if($row['department']=="I.T") echo 'checked';?> disabled>Information Technology
-	                                        </label>
-	                                    </div>
-	                                    <div class="radio">
-	                                        <label>
-	                                            <input type="radio" name="department" value="E.C.E" <?php if($row['department']=="E.C.E") echo 'checked';?> disabled>Electronics and Communication
-	                                        </label>
-	                                    </div>
+                                        <div class="radio">
+                                            <label>
+                                          	  <input type="radio" name="department" value="I.T" <?php if($row['department']=="I.T") echo 'checked';?>>Information Technology
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="department" value="E.C.E" <?php if($row['department']=="E.C.E") echo 'checked';?>>Electronics and Communication
+                                            </label>
+                                        </div>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Programme: </label>
 									<div class="col-sm-5">
 										<select class="form-control" name="programme">
-											<option value="<?= $row['programme']?>"><?= $row['programme']?></option>
+											<option value="B.Tech" <?php if($row['programme']=="B.Tech") echo 'selected';?>>B.Tech</option>
+											<option value="M.tech" <?php if($row['programme']=="M.Tech") echo 'selected';?>>M.Tech</option>
+											<option value="B.Tech-M.Tech Dual" <?php if($row['programme']=="B.Tech-M.Tech Dual") echo 'selected';?>>B.Tech-M.Tech Dual</option>
+											<option value="P.h.d" <?php if($row['programme']=="P.h.d") echo 'selected';?>>P.h.d</option>
 										</select>
 									</div>
 								</div>
@@ -295,46 +327,47 @@ $row = $obj->give_row();
 									<label class="col-sm-4 control-label">Batch: </label>
 									<div class="col-sm-3">
 										<select class="form-control" name="batch">
-											<option value=<?= $row['batch']?>><?= $row['batch']?></option>
+											<?php
+												for($i=2016; $i>=2000; $i--) {
+													if($row['batch']==$i)
+														echo "<option value=\"$i\" selected> $i </option>";
+													else
+														echo "<option value=\"$i\" > $i </option>";
+												}
+											?>
 										</select>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Semester: </label>
 									<div class="col-sm-3">
-										<select class="form-control" name="semester">
-											<option value=<?= $row['semester']?>><?= $row['semester']?></option>
+										<select class="form-control" name="semester"><?php 
+											for($i=1; $i<=8; $i++) {
+												if($row['semester']==$i)
+													echo "<option value=\"$i\" selected> $i </option>";
+												else
+													echo "<option value=\"$i\" > $i </option>";
+											}
+										?>
 										</select>
+									</div>
+								</div>
+								<input type="hidden" name="date" value="<?php echo time(); ?>" />
+								<div class="form-group"></div>
+								<div class="form-group">
+									<div class="col-sm-offset-3 col-sm-7">
+										<input type="submit" value="Update" class="btn btn-lg btn-success btn-block"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-4 col-sm-5">
+										<p><a href="profile.php" class="btn btn-lg btn-warning btn-block">Cancel</a></p>
 									</div>
 								</div>
 							</fieldset>
 						</form>
-						<!--row(nested)-->
-					</div>
-					<!--panel-body-->
-				</div>
-				<!--panel panel-default-->
-			</div>
-			<!--col-md-7-->
-
-			<div class="col-md-4">
-				<div class="panel panel-success">
-					<div class="panel-heading">Edit your profile</div>
-					<div class="panel-body">
-						<p>You can edit your profile here:</p>
-						<a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-info">
-					<div class="panel-heading">Change your Password</div>
-					<div class="panel-body">
-						<p>You can change your password by clicking the link below:</p>
-						<a href="change_password.php" class="btn btn-warning">Change Password</a>
-					</div>
-				</div>
-			</div>
 		</div>
 		<!--row-->
 	</div>

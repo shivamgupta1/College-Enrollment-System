@@ -81,7 +81,7 @@ body {
 				</div>
 				<div class="panel-body">
 					<?php if($logged=='invalid') : ?>
-					<p class="text-danger">Invalid username or password</p>
+					<p class="bg-danger">Invalid username or password</p>
 					<?php endif;?>
 					<?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
 					<?php if($loggedout==true) : ?>

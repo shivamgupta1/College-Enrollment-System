@@ -49,7 +49,7 @@ $obj->update_personal("$row[rollno]");
     <div id="wrapper">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #d0e1e1">
 	    <div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		    <span class="sr-only">Toggle navigation</span>
@@ -57,7 +57,7 @@ $obj->update_personal("$row[rollno]");
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href=""><strong>College Enrollment System</strong></a>
+		<a class="navbar-brand" href="../index.php"><strong>College Enrollment System</strong></a>
 	    </div>
 	    <!-- /.navbar-header -->
 
@@ -97,7 +97,7 @@ $obj->update_personal("$row[rollno]");
 			    <a href="../index.php"><i class="glyphicon glyphicon-home"></i> &nbsp&nbspHome</a>
 			</li>
 			<li>
-			    <a href=""><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
+			    <a href="courses.php"><i class="glyphicon glyphicon-book"></i> &nbsp&nbspCourses</a>
 			</li>
 			<li>
 			    <a href="instructors.php"><i class="glyphicon glyphicon-user"></i> &nbsp&nbspInstructors</a>

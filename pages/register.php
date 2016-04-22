@@ -139,7 +139,7 @@
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Date of birth: </label>
 									<div class="col-sm-8">
-										<div class="col-xs-3">
+										<div class="col-xs-4">
 											<select class="form-control" name="date_dob">
 												<option value="null">DD</option>
 												<?php
@@ -150,7 +150,7 @@
 											}
 											</select>
 										</div>
-										<div class="col-xs-3">
+										<div class="col-xs-4">
 											<select class="form-control" name="month_dob">
 												<option value="null">MM</option>
 												<?php
@@ -234,7 +234,7 @@
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">Programme: </label>
-									<div class="col-sm-3">
+									<div class="col-sm-5">
 										<select class="form-control" name="programme">
 											<option value="B.Tech">B.Tech</option>
 											<option value="M.tech">M.Tech</option>
