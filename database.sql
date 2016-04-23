@@ -103,29 +103,29 @@ insert into course_allotted
 /* For 3rd Semester */
 
 insert into course
-	values('IOOM 332C', 1, 'Object Oriented Methodologies', 'Learn OOM concetps with Java');
+	values('IOOM 332C', 6, 'Object Oriented Methodologies', 'Learn OOM concetps with Java');
 insert into instructor
-	values(1, 'Ranjana Vyas', 'ranjana@iiita.ac.in', 'http://profile.iiita.ac.in/ranana');
+	values(6, 'Ranjana Vyas', 'ranjana@iiita.ac.in', 'http://profile.iiita.ac.in/ranana');
 
 insert into course
-	values('IOPS 332C', 2, 'Operating Systems', 'Learn Operating System concepts');
+	values('IOPS 332C', 7, 'Operating Systems', 'Learn Operating System concepts');
 insert into instructor
-	values(2, 'Bibhas Ghoshal', 'bibhas.ghoshal@iiita.ac.in', 'http://profile.iiita.ac.in/bibhas.ghoshal');
+	values(7, 'Bibhas Ghoshal', 'bibhas.ghoshal@iiita.ac.in', 'http://profile.iiita.ac.in/bibhas.ghoshal');
 
 insert into course
-	values('ITOC 330C', 3, 'Theory Of Computation', 'Learn about Theory Of Computation and Automata');
+	values('ITOC 330C', 8, 'Theory Of Computation', 'Learn about Theory Of Computation and Automata');
 insert into instructor
-	values(3, 'Somenath Biswas', 'sb@iiita.ac.in', 'http://profile.iiita.ac.in/sb');
+	values(8, 'Somenath Biswas', 'sb@iiita.ac.in', 'http://profile.iiita.ac.in/sb');
 
 insert into course
-	values('SMAT 330C', 4, 'Mathematics-3', 'Learn Complex Analysis and Transformations');
+	values('SMAT 330C', 9, 'Mathematics-3', 'Learn Complex Analysis and Transformations');
 insert into instructor
-	values(4, 'Abdullah Bin Abu Baker', 'abdullah@iiita.ac.in', 'http://profile.iiita.ac.in/abdullah');
+	values(9, 'Abdullah Bin Abu Baker', 'abdullah@iiita.ac.in', 'http://profile.iiita.ac.in/abdullah');
 
 insert into course
-	values('EMIP 332C', 5, 'Microprocessors', 'Learn Microprocessor Interfacing and Programming');
+	values('EMIP 332C', 10, 'Microprocessors', 'Learn Microprocessor Interfacing and Programming');
 insert into instructor
-	values(5, 'Prasanna Kumar Misra', 'prasanna@iiita.ac.in', 'http://profile.iiita.ac.in/prasanna');
+	values(10, 'Prasanna Kumar Misra', 'prasanna@iiita.ac.in', 'http://profile.iiita.ac.in/prasanna');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 3, 'IOOM 332C');
@@ -141,29 +141,29 @@ insert into course_allotted
 /* For 2nd Semester */
 
 insert into course
-	values('IDSA 232C', 1, 'Data Structures And Algorithms', 'Learn Data Structures and Algorithms');
+	values('IDSA 232C', 11, 'Data Structures And Algorithms', 'Learn Data Structures and Algorithms');
 insert into instructor
 	values(1, 'Sonali Agarwal', 'sonali@iiita.ac.in', 'http://profile.iiita.ac.in/sonali');
 
 insert into course
-	values('ICOA 230C', 2, 'Computer Organization And Architecture', 'Learn fundamentals of Computer Organization And Architecture');
+	values('ICOA 230C', 12, 'Computer Organization And Architecture', 'Learn fundamentals of Computer Organization And Architecture');
 insert into instructor
-	values(2, 'Satish Kumar Singh', 'sk.singh@iiita.ac.in', 'http://profile.iiita.ac.in/sk.singh');
+	values(12, 'Satish Kumar Singh', 'sk.singh@iiita.ac.in', 'http://profile.iiita.ac.in/sk.singh');
 
 insert into course
-	values('IDIM 230C', 3, 'Discrete Mathematics', 'Learn concepts of Discrete Mathematics');
+	values('IDIM 230C', 8, 'Discrete Mathematics', 'Learn concepts of Discrete Mathematics');
 insert into instructor
-	values(3, 'Somenath Biswas', 'sb@iiita.ac.in', 'http://profile.iiita.ac.in/sb');
+	values(8, 'Somenath Biswas', 'sb@iiita.ac.in', 'http://profile.iiita.ac.in/sb');
 
 insert into course
-	values('SMAT 232C', 4, 'Mathematics-2', 'Learn about Linear Algebra and Interpolation Techniques');
+	values('SMAT 232C', 13, 'Mathematics-2', 'Learn about Linear Algebra and Interpolation Techniques');
 insert into instructor
-	values(4, 'Akhilesh Tiwari', 'atiwari@iiita.ac.in', 'http://profile.iiita.ac.in/atiwari');
+	values(13, 'Akhilesh Tiwari', 'atiwari@iiita.ac.in', 'http://profile.iiita.ac.in/atiwari');
 
 insert into course
-	values('EDLE 232C', 5, 'Digital Electronics', 'Learn concepts of Digital Electronics');
+	values('EDLE 232C', 14, 'Digital Electronics', 'Learn concepts of Digital Electronics');
 insert into instructor
-	values(5, 'Pramod Kumar', 'pkumar@iiita.ac.in', 'http://profile.iiita.ac.in/pkumar');
+	values(14, 'Pramod Kumar', 'pkumar@iiita.ac.in', 'http://profile.iiita.ac.in/pkumar');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 2, 'IDSA 232C');
@@ -179,29 +179,29 @@ insert into course_allotted
 /* For 1st Semester */
 
 insert into course
-	values('ITP 132C', 1, 'Introduction To Programming', 'Learn how to program in a language like C');
+	values('ITP 132C', 15, 'Introduction To Programming', 'Learn how to program in a language like C');
 insert into instructor
-	values(1, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
+	values(15, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
 
 insert into course
-	values('ITC 132C', 2, 'Introduction To Computers', 'Learn basic concepts of a computer system');
+	values('ITC 132C', 16, 'Introduction To Computers', 'Learn basic concepts of a computer system');
 insert into instructor
-	values(2, 'Mithilesh Mishra', 'mithilesh@iiita.ac.in', 'http://profile.iiita.ac.in/mithilesh');
+	values(16, 'Mithilesh Mishra', 'mithilesh@iiita.ac.in', 'http://profile.iiita.ac.in/mithilesh');
 
 insert into course
-	values('EEDC 132C', 3, 'Electronic Devices And Circuits', 'Learn basic concepts of electronics like diode, transistor, oscillator, op amp etc.');
+	values('EEDC 132C', 17, 'Electronic Devices And Circuits', 'Learn basic concepts of electronics like diode, transistor, oscillator, op amp etc.');
 insert into instructor
-	values(3, 'Sitangshu Bhattacharya', 'sitangshu@iiita.ac.in', 'http://profile.iiita.ac.in/sitangshu');
+	values(17, 'Sitangshu Bhattacharya', 'sitangshu@iiita.ac.in', 'http://profile.iiita.ac.in/sitangshu');
 
 insert into course
-	values('SMAT 130C', 4, 'Mathematics-1', 'Learn about Ordinary Differential Equations, Sequences and Series, A brief introduction to Multivariable Calculus');
+	values('SMAT 130C', 18, 'Mathematics-1', 'Learn about Ordinary Differential Equations, Sequences and Series, A brief introduction to Multivariable Calculus');
 insert into instructor
-	values(4, 'Ramji Lal', 'ramji@iiita.ac.in', 'http://profile.iiita.ac.in/ramji');
+	values(18, 'Ramji Lal', 'ramji@iiita.ac.in', 'http://profile.iiita.ac.in/ramji');
 
 insert into course
-	values('ECAS 130C', 5, 'Circuit Analysis And Synthesis', 'Learn fundamentals of circuit theory');
+	values('ECAS 130C', 10, 'Circuit Analysis And Synthesis', 'Learn fundamentals of circuit theory');
 insert into instructor
-	values(5, 'Prasanna Kumar Misra', 'prasanna@iiita.ac.in', 'http://profile.iiita.ac.in/prasanna');
+	values(10, 'Prasanna Kumar Misra', 'prasanna@iiita.ac.in', 'http://profile.iiita.ac.in/prasanna');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 1, 'ITP 132C');
@@ -217,29 +217,29 @@ insert into course_allotted
 /* For 5th Semester */
 
 insert into course
-	values('ICNW 532C', 1, 'Computer Networks', 'Learn how computer network works');
+	values('ICNW 532C', 19, 'Computer Networks', 'Learn how computer network works');
 insert into instructor
-	values(1, 'Shekhar Verma', 'sverma@iiita.ac.in', 'http://profile.iiita.ac.in/sverma');
+	values(19, 'Shekhar Verma', 'sverma@iiita.ac.in', 'http://profile.iiita.ac.in/sverma');
 
 insert into course
-	values('ISWE 532C', 2, 'Software Engineering', 'Learn how to build quality softwares');
+	values('ISWE 532C', 20, 'Software Engineering', 'Learn how to build quality softwares');
 insert into instructor
-	values(2, 'Sudip Sanyal', 'ssanyal@iiita.ac.in', 'http://profile.iiita.ac.in/ssanyal');
+	values(20, 'Sudip Sanyal', 'ssanyal@iiita.ac.in', 'http://profile.iiita.ac.in/ssanyal');
 
 insert into course
-	values('IAIN 532C', 3, 'Artificial Intelligence', 'Learn how to use Artificial Intelligence in computers');
+	values('IAIN 532C', 21, 'Artificial Intelligence', 'Learn how to use Artificial Intelligence in computers');
 insert into instructor
-	values(3, 'Rahul Kala', 'rkala@iiita.ac.in', 'http://profile.iiita.ac.in/rkala');
+	values(21, 'Rahul Kala', 'rkala@iiita.ac.in', 'http://profile.iiita.ac.in/rkala');
 
 insert into course
-	values('ICOG 532C', 4, 'Computer Graphics', 'Learn how Computer Graphics work');
+	values('ICOG 532C', 22, 'Computer Graphics', 'Learn how Computer Graphics work');
 insert into instructor
-	values(4, 'Pavan Chakraborty', 'pavan@iiita.ac.in', 'http://profile.iiita.ac.in/pavan');
+	values(22, 'Pavan Chakraborty', 'pavan@iiita.ac.in', 'http://profile.iiita.ac.in/pavan');
 
 insert into course
-	values('MPOE 530C', 5, 'Principles Of Economics', 'Learn about basic Principles of Economics');
+	values('MPOE 530C', 23, 'Principles Of Economics', 'Learn about basic Principles of Economics');
 insert into instructor
-	values(5, 'Shailendra Kumar', 'shailendrak@iiita.ac.in', 'http://profile.iiita.ac.in/shailendrak');
+	values(23, 'Shailendra Kumar', 'shailendrak@iiita.ac.in', 'http://profile.iiita.ac.in/shailendrak');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 5, 'ICNW 532C');
@@ -256,29 +256,29 @@ insert into course_allotted
 
 
 insert into course
-	values('ICOD 632C', 1, 'Compiler Designing', 'Learn how to build a compiler for a language');
+	values('ICOD 632C', 15, 'Compiler Designing', 'Learn how to build a compiler for a language');
 insert into instructor
-	values(1, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
+	values(15, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
 
 insert into course
-	values('IDMW 632C', 2, 'Data Mining', 'Learn about concepts of Data Mining');
+	values('IDMW 632C', 24, 'Data Mining', 'Learn about concepts of Data Mining');
 insert into instructor
-	values(2, 'Manish Kumar', 'manish@iiita.ac.in', 'http://profile.iiita.ac.in/manish');
+	values(24, 'Manish Kumar', 'manish@iiita.ac.in', 'http://profile.iiita.ac.in/manish');
 
 insert into course
-	values('IOOT 630E', 3, 'Optimization Technologies', 'Learn about Optimization Techniques and how to apply them');
+	values('IOOT 630E', 25, 'Optimization Technologies', 'Learn about Optimization Techniques and how to apply them');
 insert into instructor
-	values(3, 'Vrijendra Singh', 'vrij@iiita.ac.in', 'http://profile.iiita.ac.in/vrij');
+	values(25, 'Vrijendra Singh', 'vrij@iiita.ac.in', 'http://profile.iiita.ac.in/vrij');
 
 insert into course
-	values('IIVP 632C', 4, 'Image and Voice Processing', 'Learn how Computer processes images and voice');
+	values('IIVP 632C', 26, 'Image and Voice Processing', 'Learn how Computer processes images and voice');
 insert into instructor
-	values(4, 'U. S. Tiwary', 'ust@iiita.ac.in', 'http://profile.iiita.ac.in/ust');
+	values(26, 'U. S. Tiwary', 'ust@iiita.ac.in', 'http://profile.iiita.ac.in/ust');
 
 insert into course
-	values('INLP 630E', 5, 'Natural Language Processing', 'Learn how is natural language processed');
+	values('INLP 630E', 27, 'Natural Language Processing', 'Learn how is natural language processed');
 insert into instructor
-	values(5, 'Ratna Sanyal', 'rsanyal@iiita.ac.in', 'http://profile.iiita.ac.in/rsanyal');
+	values(27, 'Ratna Sanyal', 'rsanyal@iiita.ac.in', 'http://profile.iiita.ac.in/rsanyal');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 6, 'ICOD 632C');
@@ -294,19 +294,19 @@ insert into course_allotted
 /* For 7th Semester */
 
 insert into course
-	values('IE1 7', 1, 'Elective 1', 'Learn about chosen Elective 1');
+	values('IE1 7', 15, 'Elective 1', 'Learn about chosen Elective 1');
 insert into instructor
-	values(1, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
+	values(15, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
 
 insert into course
-	values('IE2 7', 2, 'Elective 2', 'Learn about chosen Elective 2');
+	values('IE2 7', 28, 'Elective 2', 'Learn about chosen Elective 2');
 insert into instructor
-	values(2, 'Sanjeev B. S.', 'sanjeev@iiita.ac.in', 'https://iws44.iiita.ac.in/bss/website');
+	values(28, 'Sanjeev B. S.', 'sanjeev@iiita.ac.in', 'https://iws44.iiita.ac.in/bss/website');
 
 insert into course
-	values('IMP 7', 3, 'Mini Project', 'Project Evaluation');
+	values('IMP 7', 29, 'Mini Project', 'Project Evaluation');
 insert into instructor
-	values(3, 'O. P. Vyas', 'opvyas@iiita.ac.in', 'http://profile.iiita.ac.in/opvyas');
+	values(29, 'O. P. Vyas', 'opvyas@iiita.ac.in', 'http://profile.iiita.ac.in/opvyas');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 7, 'IE1');
@@ -318,9 +318,9 @@ insert into course_allotted
 /* For 8th Semester 8 */
 
 insert into course
-	values('IE1 8', 1, 'Elective 1', 'Learn about chosen Elective 1');
+	values('IE1 8', 21, 'Elective 1', 'Learn about chosen Elective 1');
 insert into instructor
-	values(1, 'Rahul Kala', 'rkala@iiita.ac.in', 'http://profile.iiita.ac.in/rkala');
+	values(21, 'Rahul Kala', 'rkala@iiita.ac.in', 'http://profile.iiita.ac.in/rkala');
 
 insert into course
 	values('IE2 8', 2, 'Elective 2', 'Learn about chosen Elective 2');
@@ -328,9 +328,9 @@ insert into instructor
 	values(2, 'Jagpreet Singh', 'jagp@iiita.ac.in', 'http://profile.iiita.ac.in/jagpreets');
 
 insert into course
-	values('IMP 8', 3, 'Mini Project', 'Project Evaluation');
+	values('IMP 8', 30, 'Mini Project', 'Project Evaluation');
 insert into instructor
-	values(3, 'Sudip Sanyal', 'ssanyal@iiita.ac.in', 'http://profile.iiita.ac.in/ssanyal');
+	values(30, 'Sudip Sanyal', 'ssanyal@iiita.ac.in', 'http://profile.iiita.ac.in/ssanyal');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 8, 'IE1');
