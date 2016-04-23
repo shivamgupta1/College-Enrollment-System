@@ -21,7 +21,7 @@ $obj->update_personal("$row[rollno]");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
     <title>Courses</title>
 
     <!-- Bootstrap Core CSS -->
