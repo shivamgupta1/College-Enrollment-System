@@ -48,7 +48,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #d0e1e1">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -56,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=""><strong>College Enrollment System</strong></a>
+                <a class="navbar-brand" href="../index.php"><strong>College Enrollment System</strong></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -184,6 +184,8 @@
                                                     <tr>
                                                         <th> Course ID </th>
                                                         <th> Course Name </th>
+                                                        <th> Department </th>
+                                                        <th> Semester </th>
                                                         <th> Instructor </th>
                                                         <th> Course Details </th>
                                                     </tr>
@@ -195,6 +197,8 @@
                                         echo "<tr>
                                             <td>$row[0]</td>
                                             <td>$row[1]</td>
+                                            <td>$row[5]</td>
+                                            <td>$row[4]</td>
                                             <td>$row[2]</td>
                                             <td>$row[3]</td>
                                         </tr>";

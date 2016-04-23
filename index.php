@@ -48,7 +48,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #d0e1e1">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -158,7 +158,7 @@
             <!-- /.row -->
             <div class="row">
             	<div class="col-lg-12">
-            		<div class="panel panel-default">
+            		<div class="panel panel-primary">
             			<div class="panel-heading">
             				Welcome <?php echo "$row[fname]"?>, Here you can...
             			</div>
@@ -169,17 +169,17 @@
             							<div class="panel-heading">View your profile</div>
             							<div class="panel-body">
             								<p> You can view and edit your profile by clicking the links below:</p>
-            								<p><a href="pages/profile.php"> View profile </a></p>
-            								<p><a href="pages/edit_profile.php">Edit profile</a></p>
+            								<p><a href="pages/profile.php" class="btn btn-default"> View profile </a></p>
+            								<p><a href="pages/edit_profile.php" class="btn btn-default">Edit profile</a></p>
             							</div>
             						</div>
 						</div>
 						<div class="col-lg-4">
-            						<div class="panel panel-danger">
+            						<div class="panel panel-yellow">
             							<div class="panel-heading">View your Instructors</div>
             							<div class="panel-body">
             								<p> You can view your Instructors here:</p>
-            								<p><a href="pages/instructors.php"> Instructor Details </a></p>
+            								<p><a href="pages/instructors.php" class="btn btn-default"> Instructor Details </a></p>
             							</div>
             						</div>
             					</div>
@@ -191,7 +191,7 @@
             							<div class="panel-heading">View your Courses</div>
             							<div class="panel-body">
             								<p> You can view your courses here:</p>
-            								<p><a href="pages/courses.php"> Course Details </a></p>
+            								<p><a href="pages/courses.php" class="btn btn-default"> Course Details </a></p>
             							</div>
             						</div>
             					</div>

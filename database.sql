@@ -47,6 +47,7 @@ create table course (
 
 create table course_allotted (
 	programme varchar(20),
+	department varchar(60),
 	semester int,
 	course_id varchar(20)
 );
@@ -69,6 +70,6 @@ insert into instructor
 	values(2, 'Jagpreet Singh', 'jagp@iiita.ac.in', "http://profile.iiita.ac.in/jagpreets");
 
 insert into course_allotted
-	values('B.Tech', 4, 'DAA 430C');
+	values('B.Tech', 'I.T', 4, 'DAA 430C');
 insert into course_allotted
-	values('B.tech', 4, 'IPPL 422C');
+	values('B.tech', 'E.C.E', 4, 'IPPL 422C');

@@ -232,11 +232,12 @@
 			
 			$row = $this->give_row();
 			$semester = $row['semester'];
+			$department = $row['department'];
 			$programme = $row['programme'];
 
 			$query = "select $course_table.course_id, $course_table.course_name, $instructor_table.instructor_name, $course_table.course_details
 					from $allocated_table natural join $course_table natural join $instructor_table
-					where $allocated_table.programme = '".$programme."' and $allocated_table.semester = '".$semester."'";
+					where $allocated_table.programme = '".$programme."' and $allocated_table.semester = '".$semester."' and $allocated_table.department = '".$department."'";
 			$results = $this->db->query($query);
 			return $results;
 		}
@@ -248,11 +249,12 @@
 			
 			$row = $this->give_row();
 			$semester = $row['semester'];
+			$department = $row['department'];
 			$programme = $row['programme'];
 
 			$query = "select distinct $instructor_table.instructor_name, $instructor_table.contact_email, $instructor_table.profile_link
 					from $allocated_table natural join $course_table natural join $instructor_table
-					where $allocated_table.programme = '".$programme."' and $allocated_table.semester = '".$semester."'";
+					where $allocated_table.programme = '".$programme."' and $allocated_table.semester = '".$semester."'and $allocated_table.department = '".$department."'";
 			$results = $this->db->query($query);
 			return $results;
 		}
@@ -266,7 +268,7 @@
 			$semester = $row['semester'];
 			$programme = $row['programme'];
 
-			$query = "select $course_table.course_id, $course_table.course_name, $instructor_table.instructor_name, $course_table.course_details
+			$query = "select $course_table.course_id, $course_table.course_name, $instructor_table.instructor_name, $course_table.course_details, $allocated_table.semester, $allocated_table.department
 					from $allocated_table natural join $course_table natural join $instructor_table";
 			$results = $this->db->query($query);
 			return $results;
@@ -288,22 +290,36 @@
 		}
 		function update_personal($rollno) {
 			$table_name = "users";
-
 			if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
 				$values = $this->clean($_POST);
+				
 				$fname = $values['fname'];
 				$lname = $values['lname'];
 				$sex = $values['sex'];
 				$date_dob = $values['date_dob'];
 				$month_dob = $values['month_dob'];
 				$year_dob = $values['year_dob'];
-
-				$query = "UPDATE $table_name SET 'fname' = '".$fname."', 'lname' = '".$lname."', 'sex' = '".$sex."', 'date_dob' = '".$date_dob."', 'month_dob' = '".$month_dob."', 'year_dob' = '".$year_dob."' WHERE rollno = '".$rollno."'";
+				$father = $values['father'];
+				$mother = $values['mother'];
+				$contact_number = $values['contact_number'];
+				$address_1 = $values['address_1'];
+				$address_2 = $values['address_2'];
+				$address_3 = $values['address_3'];
+				$category = $values['category'];
+				$department = $values['department'];
+				$programme = $values['programme'];
+				$batch = $values['batch'];
+				$semester = $values['semester'];
+				
+				$query = "UPDATE $table_name SET fname = '".$fname."', lname = '".$lname."', sex = '".$sex."', date_dob = '".$date_dob."', month_dob= '".$month_dob."', year_dob = '".$year_dob."', father='".$father."', mother='".$mother."', contact_number='".$contact_number."', address_1='".$address_1."', address_2='".$address_2."', address_3='".$address_3."', category='".$category."', department='".$department."', programme='".$programme."', batch='".$batch."', semester='".$semester."' WHERE rollno = '".$rollno."'";
 				$result = $this->db->query($query);
 				if ($result) {
-					die("Success");
+					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+					$redirect = str_replace('pages/edit_profile.php', 'pages/profile.php', $url);
+					header("Location: $redirect?update=success");
+					exit;
 				} else {
-					die("filaure");
+					die("failure");
 				}
 			}
 		}
