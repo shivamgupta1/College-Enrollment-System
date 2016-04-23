@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
     <title>Edit Profile</title>
 
     <!-- Bootstrap Core CSS -->
