@@ -85,18 +85,18 @@ body {
 					<?php endif;?>
 					<?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
 					    <?php if($loggedout==true) : ?>
-					    <p class="text-success">You have been successfully logged out.</p>
+					    <p class="bg-success">You have been successfully logged out.</p>
 					    <?php else : ?>
 					    <p class="text-danger">There was a problem logging you out.</p>
 				        <?php endif;?>
 					<?php endif;?>
                     <?php if(isset($_GET['action']) && $_GET['action']=='change_password') :?>
                         <?php if($loggedout==true) : ?>
-                        <p class="text-success">Your password was successfully changed. Please log in below.</p>
+                        <p class="bg-success">Your password was successfully changed. Please log in below.</p>
                         <?php endif;?>
                     <?php endif;?>
                     <?php if(isset($_GET['register']) && $_GET['register']=='success') : ?>
-					<p class="text-success">Registration was successful. Please log in below.</p>
+					<p class="bg-success">Registration was successful. Please log in below.</p>
 					<?php endif;?>
 					<?php if(isset($_GET['msg']) && $_GET['msg']=='login') : ?>
 					<p class="text-primary">You must log in to view this content. Please log in below.</p>
