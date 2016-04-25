@@ -2,7 +2,7 @@
 require('../includes/config.php');
 require('../includes/login_db.php');
 
-if(isset($_GET['action']) && $_GET['action']=='logout') {
+if(isset($_GET['action']) && ($_GET['action']=='logout' || $_GET['action']=='change_password')) {
 	$loggedout = $obj->logout();
 }
 
@@ -84,13 +84,18 @@ body {
 					<p class="bg-danger">Invalid username or password</p>
 					<?php endif;?>
 					<?php if(isset($_GET['action']) && $_GET['action']=='logout') :?>
-					<?php if($loggedout==true) : ?>
-					<p class="text-success">You have been successfully logged out.</p>
-					<?php else : ?>
-					<p class="text-danger">There was a problem logging you out.</p>
+					    <?php if($loggedout==true) : ?>
+					    <p class="text-success">You have been successfully logged out.</p>
+					    <?php else : ?>
+					    <p class="text-danger">There was a problem logging you out.</p>
+				        <?php endif;?>
 					<?php endif;?>
-					<?php endif;?>
-					<?php if(isset($_GET['register']) && $_GET['register']=='success') : ?>
+                    <?php if(isset($_GET['action']) && $_GET['action']=='change_password') :?>
+                        <?php if($loggedout==true) : ?>
+                        <p class="text-success">Your password was successfully changed. Please log in below.</p>
+                        <?php endif;?>
+                    <?php endif;?>
+                    <?php if(isset($_GET['register']) && $_GET['register']=='success') : ?>
 					<p class="text-success">Registration was successful. Please log in below.</p>
 					<?php endif;?>
 					<?php if(isset($_GET['msg']) && $_GET['msg']=='login') : ?>

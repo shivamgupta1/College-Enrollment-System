@@ -163,7 +163,7 @@ $row = $obj->give_row();
 						View your profile here
 					</div>
 					<div class="panel-body">
-						<form role="form" class="form-horizontal" action="edit_profile.php" method="post" id="myForm">
+						<form role="form" class="form-horizontal" action="" method="post" id="myForm">
 							<?php if(isset($_GET['update']) && $_GET['update']=="success") : ?>
 								<fieldset>
 									<br />

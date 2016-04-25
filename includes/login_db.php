@@ -323,6 +323,48 @@
 				}
 			}
 		}
+
+		function change_password() {
+			$table_name = "users";
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+
+
+				$row = $this->give_row();
+				
+				$values = $this->clean($_POST);
+
+				$current_password = $values['current_password'];
+				$new_password = $values['new_password'];
+				$confirm_password = $values['confirm_password'];
+				$regdate = $values['date'];
+
+				$nonce  = md5('very secure'.$row['rollno'].$row['regdate'].NONCE_SALT );
+				$current_password = hash_password($current_password, $nonce);
+
+				if($current_password != $row['password']) {
+					return 'invalid';
+				}
+				if($new_password != $confirm_password) {
+					return 'match_error';
+				}
+
+				$nonce = md5('very secure'.$row['rollno'].$regdate.NONCE_SALT);
+				$new_password = hash_password($new_password, $nonce);
+				
+				$query = "UPDATE $table_name SET password = '".$new_password."', regdate = '".$regdate."' where rollno = '".$row['rollno']."'";
+				$result = $this->db->query($query);
+				if($result) {
+					$url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+					$redirect = str_replace('pages/change_password.php', 'pages/login.php', $url);
+					header("Location: $redirect?action=change_password");
+					exit;
+				} else {
+					die("failure");
+				}
+			} else {
+				return "no_data";
+			}
+		}
 				
 	}
 
