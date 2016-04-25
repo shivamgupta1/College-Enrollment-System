@@ -49,14 +49,16 @@ create table course_allotted (
 	programme varchar(20),
 	department varchar(60),
 	semester int,
-	course_id varchar(20)
+	course_id varchar(20),
+	CONSTRAINT pk_unique PRIMARY KEY (programme,department,semester,course_id)
 );
 
 create table instructor (
 	instructor_id int,
 	instructor_name varchar(60),
 	contact_email varchar(30),
-	profile_link varchar(60)
+	profile_link varchar(60),
+	primary key(instructor_id)
 );
 
 insert into course
@@ -65,14 +67,10 @@ insert into instructor
 	values(1, 'Amit Dhar', 'amit@iiita.ac.in', 'http://profile.iiita.ac.in/amitdhar');
 
 insert into course
-	values('IPPL 422C', 2, 'Principles of programming languages', 'Learn syntax and semantics of programming languages');
-insert into instructor
-	values(2, 'Jagpreet Singh', 'jagp@iiita.ac.in', 'http://profile.iiita.ac.in/jagpreets');
+	values('IPPL 430C', 2, 'Principles of programming languages', 'Learn syntax and semantics of programming languages');
 
 insert into course_allotted
 	values('B.Tech', 'I.T', 4, 'DAA 430C');
-insert into course_allotted
-	values('B.tech', 'E.C.E', 4, 'IPPL 422C');
 
 /* Data entries by Mohneesh Khaneja */
 
@@ -89,7 +87,7 @@ insert into instructor
 insert into course
 	values('EPOC 432C', 5, 'Principles Of Communication', 'Learn how communication systems work');
 insert into instructor
-	values(5, 'NP|SY|SB', 'np|suneel|somakb@iiita.ac.in', 'http://profile.iiita.ac.in/np|suneel|somakb');
+	values(5, 'Nitesh Purohit', 'np@iiita.ac.in', 'http://profile.iiita.ac.in/np');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 4, 'IPPL 430C');
@@ -143,7 +141,7 @@ insert into course_allotted
 insert into course
 	values('IDSA 232C', 11, 'Data Structures And Algorithms', 'Learn Data Structures and Algorithms');
 insert into instructor
-	values(1, 'Sonali Agarwal', 'sonali@iiita.ac.in', 'http://profile.iiita.ac.in/sonali');
+	values(11, 'Sonali Agarwal', 'sonali@iiita.ac.in', 'http://profile.iiita.ac.in/sonali');
 
 insert into course
 	values('ICOA 230C', 12, 'Computer Organization And Architecture', 'Learn fundamentals of Computer Organization And Architecture');
@@ -152,8 +150,6 @@ insert into instructor
 
 insert into course
 	values('IDIM 230C', 8, 'Discrete Mathematics', 'Learn concepts of Discrete Mathematics');
-insert into instructor
-	values(8, 'Somenath Biswas', 'sb@iiita.ac.in', 'http://profile.iiita.ac.in/sb');
 
 insert into course
 	values('SMAT 232C', 13, 'Mathematics-2', 'Learn about Linear Algebra and Interpolation Techniques');
@@ -180,8 +176,6 @@ insert into course_allotted
 
 insert into course
 	values('ITP 132C', 15, 'Introduction To Programming', 'Learn how to program in a language like C');
-insert into instructor
-	values(15, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
 
 insert into course
 	values('ITC 132C', 16, 'Introduction To Computers', 'Learn basic concepts of a computer system');
@@ -200,8 +194,6 @@ insert into instructor
 
 insert into course
 	values('ECAS 130C', 10, 'Circuit Analysis And Synthesis', 'Learn fundamentals of circuit theory');
-insert into instructor
-	values(10, 'Prasanna Kumar Misra', 'prasanna@iiita.ac.in', 'http://profile.iiita.ac.in/prasanna');
 
 insert into course_allotted
 	values('B.tech', 'I.T', 1, 'ITP 132C');
@@ -228,8 +220,6 @@ insert into instructor
 
 insert into course
 	values('IAIN 532C', 21, 'Artificial Intelligence', 'Learn how to use Artificial Intelligence in computers');
-insert into instructor
-	values(21, 'Rahul Kala', 'rkala@iiita.ac.in', 'http://profile.iiita.ac.in/rkala');
 
 insert into course
 	values('ICOG 532C', 22, 'Computer Graphics', 'Learn how Computer Graphics work');
@@ -257,8 +247,6 @@ insert into course_allotted
 
 insert into course
 	values('ICOD 632C', 15, 'Compiler Designing', 'Learn how to build a compiler for a language');
-insert into instructor
-	values(15, 'Venkatesan S', 'venkat@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');
 
 insert into course
 	values('IDMW 632C', 24, 'Data Mining', 'Learn about concepts of Data Mining');
