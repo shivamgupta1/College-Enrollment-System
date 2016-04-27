@@ -316,25 +316,6 @@ $row = $obj->give_row();
 				<!--panel panel-default-->
 			</div>
 			<!--col-md-7-->
-
-			<div class="col-md-4">
-				<div class="panel panel-success">
-					<div class="panel-heading">Edit your profile</div>
-					<div class="panel-body">
-						<p>You can edit your profile here:</p>
-						<a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-info">
-					<div class="panel-heading">Change your Password</div>
-					<div class="panel-body">
-						<p>You can change your password by clicking the link below:</p>
-						<a href="change_password.php" class="btn btn-warning">Change Password</a>
-					</div>
-				</div>
-			</div>
 		</div>
 		<!--row-->
 	</div>

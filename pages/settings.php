@@ -7,7 +7,6 @@ if(!($obj->check_login())) {
 };
 
 $row = $obj->give_row();
-$obj->update_personal("$row[rollno]");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,7 @@ $obj->update_personal("$row[rollno]");
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="../images/favicon.ico" />
-    <title>Courses</title>
+    <title>Settings</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -158,97 +157,29 @@ $obj->update_personal("$row[rollno]");
 	    </div>
 	    <!-- /.row -->
 	    <div class="row">
-		<div class="col-lg-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					Edit your profile here
-				</div>
-				<div class="panel-body">
-					<div class="row">
-					<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-							<div class="col-lg-6">
-								<fieldset>
-									<div class="form-group">
-										<label for="rollno">Roll no.</label>
-										<input class="form-control" type="text" name="rollno" value="<?php echo "$row[rollno]"?>" readonly>
-									</div>
-								</fieldset>
-								<fieldset>
-									<div class="form-group">
-										<label for="fname">First Name</label>
-										<input class="form-control" type="text" name="fname" value="<?php echo "$row[fname]"?>">
-									</div>
-									<div class="form-group">
-										<label for="lname">Last Name</label>
-										<input class="form-control" type="text" name="lname" value="<?php echo "$row[lname]"?>">
-									</div>
-									<div class="form-group">
-										<label>Sex:</label>
-										<div class="radio">
-											<label>
-												<input type="radio" name="sex" id="sex" value="male" <?php echo ("$row[sex]"=='Male')?'checked':'' ?>>Male
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="sex" id="sex" value="female" <?php echo ("$row[sex]"=='Female')?'checked':''?>>Female
-											</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<label>Date of Birth:</label>
-										<div>
-											<div class="col-xs-3">
-												<select class="form-control" name="date_dob">
-													<option value="<?php echo "$row[date_dob]" ?>"><?php echo "$row[date_dob]" ?></option>
-<?php
-for($i=1; $i<=31; $i++) {
-	printf("<option value=\"%02u\"> %02u </option>",$i, $i);
-}
-?>
-													}
-												</select>
-											</div>
-											<div class="col-xs-3">
-												<select class="form-control" name="month_dob">
-													<option value="<?php echo "$row[month_dob]" ?>"><?php echo "$row[month_dob]" ?></option>
-<?php
-for($i=1; $i<=12; $i++) {
-	printf("<option value=\"%02u\"> %02u </option>",$i, $i);
-}
-?>
-												</select>
-											</div>
-											<div class="col-xs-4">
-												<select class="form-control" name="year_dob">
-													<option value="<?php echo "$row[year_dob]" ?>"><?php echo "$row[year_dob]" ?></option>
-<?php
-for($i=2006; $i>=1985; $i--) {
-	echo "<option value=\"$i\" > $i </option>";
-}
-?>
-												</select>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<br>
-								<button type="submit" class="btn btn-default">Save</button>
-
-							</div>
-						</form>
+			<div class="col-md-4">
+				<div class="panel panel-success">
+					<div class="panel-heading">Edit your profile</div>
+					<div class="panel-body">
+						<p>You can edit your profile here:</p>
+						<a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
 					</div>
-					<!--row(nested)-->
 				</div>
-				<!--panel-body-->
 			</div>
-			<!--panel panel-default-->
 		</div>
-		<!--col-lg-12-->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel panel-info">
+					<div class="panel-heading">Change your Password</div>
+					<div class="panel-body">
+						<p>You can change your password by clicking the link below:</p>
+						<a href="change_password.php" class="btn btn-warning">Change Password</a>
+					</div>
+				</div>
+			</div>
+		</div>	
 	</div>
-	<!--row-->
-</div>
-<!-- /#page-wrapper -->
+	<!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
 
