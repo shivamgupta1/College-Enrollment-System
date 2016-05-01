@@ -124,37 +124,37 @@ insert into instructor
 insert into instructor
 	values(30, 'Rahul Kala', 'rkala@iiita.ac.in', 'http://profile.iiita.ac.in/rkala');
 insert into instructor
-	values(31, 'Sunny Sharma', 'sunnys{at}iiita.ac.in', 'http://profile.iiita.ac.in/venkat');	/* NO PROFILE */	
+	values(31, 'Sunny Sharma', 'sunnys@iiita.ac.in', 'http://profile.iiita.ac.in/venkat');	/* NO PROFILE */	
 insert into instructor
-	values(32, 'Dr. K. P. Singh', 'kpsingh{at}iiita.ac.in', 'http://profile.iiita.ac.in/kpsingh');
+	values(32, 'Dr. K. P. Singh', 'kpsingh@iiita.ac.in', 'http://profile.iiita.ac.in/kpsingh');
 insert into instructor
-	values(33, 'Dr. Manish Goswami', 'manishgoswami{at}iiita.ac.in', 'http://profile.iiita.ac.in/manishgoswami');
+	values(33, 'Dr. Manish Goswami', 'manishgoswami@iiita.ac.in', 'http://profile.iiita.ac.in/manishgoswami');
 insert into instructor
-	values(34, 'Ms. Pooja Jain', 'poojajain{at}iiita.ac.in', 'http://profile.iiita.ac.in/poojajain');
+	values(34, 'Ms. Pooja Jain', 'poojajain@iiita.ac.in', 'http://profile.iiita.ac.in/poojajain');
 insert into instructor
-	values(35, 'Dr.Somak-Bhattacharyya', 'somakb{at}iiita.ac.in', 'http://profile.iiita.ac.in/somakb');
+	values(35, 'Dr.Somak-Bhattacharyya', 'somakb@iiita.ac.in', 'http://profile.iiita.ac.in/somakb');
 insert into instructor
-	values(36, 'Dr. Rajat Kumar Singh', 'rajatsingh{at}iiita.ac.in', 'http://profile.iiita.ac.in/rajatsingh');	
+	values(36, 'Dr. Rajat Kumar Singh', 'rajatsingh@iiita.ac.in', 'http://profile.iiita.ac.in/rajatsingh');	
 insert into instructor
-	values(37, 'Dr. Vrijendra Singh', 'vrij{at}iiita.ac.in', 'http://profile.iiita.ac.in/vrij');
+	values(37, 'Dr. Vrijendra Singh', 'vrij@iiita.ac.in', 'http://profile.iiita.ac.in/vrij');
 insert into instructor
-	values(38, 'Dr. Anupam', 'anupam{at}iiita.ac.in', 'http://profile.iiita.ac.in/anupam');
+	values(38, 'Dr. Anupam', 'anupam@iiita.ac.in', 'http://profile.iiita.ac.in/anupam');
 insert into instructor
-	values(39, 'Dr. Vijay K. Chaurasiya', 'vijayk{at}iiita.ac.in', 'http://profile.iiita.ac.in/vijayk');
+	values(39, 'Dr. Vijay K. Chaurasiya', 'vijayk@iiita.ac.in', 'http://profile.iiita.ac.in/vijayk');
 insert into instructor
-	values(40, 'Prof. G. C. Nandi', 'gcnandi{at}iiita.ac.in', 'http://profile.iiita.ac.in/gcnandi');
+	values(40, 'Prof. G. C. Nandi', 'gcnandi@iiita.ac.in', 'http://profile.iiita.ac.in/gcnandi');
 insert into instructor
-	values(41, 'Dr. Ranjit Singh', '	ranjitsingh{at}iiita.ac.in', 'http://profile.iiita.ac.in/ranjitsingh');
+	values(41, 'Dr. Ranjit Singh', '	ranjitsingh@iiita.ac.in', 'http://profile.iiita.ac.in/ranjitsingh');
 insert into instructor
-	values(42, 'Dr. Shirshu Varma', 'shirshu{at}iiita.ac.in', 'http://profile.iiita.ac.in/shirshu');
+	values(42, 'Dr. Shirshu Varma', 'shirshu@iiita.ac.in', 'http://profile.iiita.ac.in/shirshu');
 insert into instructor
-	values(43, 'Dr. Rekha Verma', 'r.verma{at}iiita.ac.in', 'http://profile.iiita.ac.in/r.verma');
+	values(43, 'Dr. Rekha Verma', 'r.verma@iiita.ac.in', 'http://profile.iiita.ac.in/r.verma');
 insert into instructor
-	values(44, 'Dr. Vijayshri Tewari', 'vijayshri{at}iiita.ac.in', 'http://profile.iiita.ac.in/vijayshri');
+	values(44, 'Dr. Vijayshri Tewari', 'vijayshri@iiita.ac.in', 'http://profile.iiita.ac.in/vijayshri');
 insert into instructor
-	values(45, 'Dr. Arun Kant Singh', 'aks{at}iiita.ac.in', 'http://profile.iiita.ac.in/aks');
+	values(45, 'Dr. Arun Kant Singh', 'aks@iiita.ac.in', 'http://profile.iiita.ac.in/aks');
 insert into instructor
-	values(46, 'Dr. Abhishek Vaish', 'http://profile.iiita.ac.in/abhishek', 'abhishek{at}iiita.ac.in');
+	values(46, 'Dr. Abhishek Vaish', 'abhishek@iiita.ac.in','http://profile.iiita.ac.in/abhishek' );
 
 
 
